@@ -28,13 +28,15 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    '~assets/css/publicStyle.css'
+    '~assets/css/publicStyle.css',
+    '~assets/css/hljs.css'
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~plugins/axios.js',
   ],
 
   /*
@@ -50,6 +52,8 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+    proxy: true,
+    proxyHeaders: true
   },
 
   /*
@@ -62,8 +66,8 @@ module.exports = {
     extend(config, ctx) {
     }
   },
-  proxyTable: {
-    '/oyapi': {
+  proxy: {
+    '/oy/api': {
       target: 'http://127.0.0.1:2222',
       changeOrigin: true,
       ws: false

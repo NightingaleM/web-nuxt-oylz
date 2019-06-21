@@ -1,22 +1,2 @@
-# oylz.nuxt-web
-
-> My fine Nuxt.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+  <!-- TODO: --------------------------做个记账本游戏 -->
+  <!-- TODO: 首页==》主体：文章列表，tag列表。 侧边栏： 头像，简介，简历 -->
