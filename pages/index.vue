@@ -1,9 +1,12 @@
 <template>
-  <div id="home-page" @click="setColor">
-    <div class="home-page-box">
+  <div id="welcome-page" @click="setColor">
+    <div class="welcome-page-box">
       <div :class="['box', item]" v-for="(item,index) in ways" :key="index">
         <div :class="['colourless','colourless-'+item]"></div>
         <div :class="['filter-tab','filter-'+item]"></div>
+        <nuxt-link :class="['l-bird-box','l-bird-box-'+item]" :to="routerList[index].to">
+          <!-- <div class="title">{{routerList[index].name}}</div> -->
+        </nuxt-link>
       </div>
     </div>
     <!--  TODO: 中间旋转内容 -->
@@ -12,7 +15,7 @@
         <div class="gray-box"></div>
         <div class="colorful-box"></div>
       </div>
-      <div class="logo web-font">O Y R C</div>
+      <!-- <div class="logo web-font">O Y R C</div> -->
       <div class="bird bot-b">
         <div class="gray-box"></div>
         <div class="colorful-box"></div>
@@ -27,16 +30,39 @@ export default {
   data() {
     return {
       ways: ['top-left', 'top-right', 'bot-left', 'bot-right'],
-      cd: 4
+      cd: 4,
+      activeKey: false,
+      routerList: [
+        {
+          name: '首页',
+          to: '/home'
+        },
+        {
+          name: '备忘录',
+          to: '/easynote'
+        },
+        {
+          name: '喳喳',
+          to: ''
+        },
+        {
+          name: '唧唧',
+          to: ''
+        }
+      ]
     }
   },
   methods: {
     setColor() {
-      if (this.cd) {
+      if (this.cd || this.activeKey) {
         return
       }
+      this.activeKey = true
       document.querySelectorAll('.filter-tab').forEach(e => {
         e.className = e.className + ' filter'
+      })
+      document.querySelectorAll('.l-bird-box').forEach(e => {
+        e.className = e.className + ' active-bird'
       })
     }
   },
@@ -44,7 +70,6 @@ export default {
     let timer = setInterval(() => {
       this.cd--
       if (this.cd === 0) {
-        console.log('done')
         clearInterval(timer)
       }
     }, 1000)
@@ -56,11 +81,11 @@ export default {
 </script>
 
 <style lang="less" scoped>
-#home-page {
+#welcome-page {
   width: 100vw;
   height: 100vh;
   background-image: url(~assets/img/fhw_invite/bg_cloud.jpg);
-  .home-page-box {
+  .welcome-page-box {
     position: relative;
     width: 100%;
     height: 100%;
@@ -149,6 +174,52 @@ export default {
         mask-image: url(~assets/img/fhw_invite/right_bot_b_m.png);
         mask-size: 1500px;
       }
+    }
+    @l: 35%;
+    @m: 65%;
+    .l-bird-box {
+      position: absolute;
+      height: 150px;
+      width: 150px;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0;
+      transition: all ease-in-out 1.5s;
+      // .title {
+      //   position: absolute;
+      // }
+      // &:hover {
+      //   @l;
+      // }
+    }
+    .active-bird {
+      opacity: 1;
+    }
+    .l-bird-box-top-left {
+      background-image: url(~assets/img/fhw_invite/bird_l_1.png);
+      top: @l;
+      left: @l;
+      transform: translate(-50%, -50%);
+    }
+    .l-bird-box-top-right {
+      height: 300px;
+      background-image: url(~assets/img/fhw_invite/bird_r_2.png);
+      top: @l;
+      left: @m;
+      transform: translate(-50%, -50%);
+    }
+    .l-bird-box-bot-left {
+      background-image: url(~assets/img/fhw_invite/bird_l_2.png);
+      top: @m;
+      left: @l;
+      transform: translate(-50%, -50%);
+    }
+    .l-bird-box-bot-right {
+      background-image: url(~assets/img/fhw_invite/bird_r_1.png);
+      top: @m;
+      left: @m;
+      transform: translate(-50%, -50%);
     }
     .top-left {
       left: 0;

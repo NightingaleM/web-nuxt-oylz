@@ -39,3 +39,45 @@ ol, ul, li {
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* 
+https://cssfx.dev/
+一些cv即用的css特效。
+*/
+
+.css_fx_pillars {
+  position: relative;
+}
+
+.css_fx_pillars::before, .css_fx_pillars::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #fc2f70;
+  transform: scaleY(0);
+  transition: transform 0.5s ease;
+}
+
+.css_fx_pillars::before {
+  left: -8px;
+  transform-origin: center top;
+}
+
+.css_fx_pillars:hover::before {
+  transform-origin: center bottom;
+  transform: scaleY(1);
+}
+
+.css_fx_pillars::after {
+  right: -8px;
+  transform-origin: center bottom;
+}
+
+.css_fx_pillars:hover::after {
+  transform-origin: center top;
+  transform: scaleY(1);
+}
+
+/* ----------------------------- */

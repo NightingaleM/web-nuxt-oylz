@@ -1,7 +1,15 @@
 <template>
-  <div id="markdown-to-html">
-    <h2 class="title">{{title}}</h2>
-    <article class="markdown-box" v-html="mdText"></article>
+  <div id="markdown-to-html" :class="[{'show-all':showAll}]">
+    <h2 class="title-box">
+      {{title}}
+      <span class="title"></span>
+    </h2>
+    <article :class="['markdown-box',{'show-all':showAll}]" v-html="mdText"></article>
+    <div
+      :class="['mk-btn',showAll ? 'hide':'show']"
+      @click="showAll = !showAll"
+    >{{showAll?'CLOSE':'SHOW'}}</div>
+    <div class="fliter-bg-box"></div>
   </div>
 </template>
 <script>
@@ -17,13 +25,20 @@ export default {
   data() {
     return {
       mdText: '',
-      mdEl: null
+      mdEl: null,
+      showAll: false
     }
   },
-  methods: {},
-  async mounted() {
+  methods: {
+    initHTMLText() {
+      let result = this.mdEl.render(this.md)
+      this.mdText = result
+    }
+  },
+  mounted() {
     // let res = await this.$axios(api.getArticleList())
-    this.mdEl = new MarkDownIt({
+    let md = new MarkDownIt({
+      // this.mdEl = new MarkDownIt({
       highlight: function(str, lang) {
         if (lang && hljs.getLanguage(lang)) {
           try {
@@ -32,7 +47,6 @@ export default {
               </code></pre>`
           } catch (__) {}
         }
-
         return (
           '<pre class="hljs"><code>' +
           md.utils.escapeHtml(str) +
@@ -40,51 +54,134 @@ export default {
         )
       }
     })
+    this.mdEl = md
+    this.initHTMLText()
   },
   watch: {
     md() {
-      let result = this.mdEl.render(res.data.result.data[0].content)
-      this.mdText = result
+      this.initHTMLText()
     }
   },
   created() {}
 }
 </script>
 <style lang="less">
-.markdown-box {
-  width: 100%;
-  font-weight: 500;
-  .hljs {
-    margin-bottom: 15px;
+// 隐藏时的高度
+@hideHeight: 300px;
+
+#markdown-to-html {
+  margin-bottom: 30px;
+  background-color: #fff;
+  position: relative;
+  padding: 20px;
+  padding-bottom: 50px;
+  z-index: 1;
+
+  .title-box {
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+    background-color: #fff;
+    background-image: url(~assets/img/fhw_invite/car_flower.jpg);
+    background-size: cover;
+    background-clip: text;
+    color: transparent;
+    animation: flowFlowerBK 15s infinite alternate 0s ease-in-out;
+    // .title {
+    // }
   }
-  a {
-    color: #3194d0;
-    text-decoration: none;
-    padding: 0 3px;
+  .mk-btn {
+    cursor: pointer;
+    padding: 5px 10px;
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid rgba(0, 0, 0, 0.24);
+    // background-color: #d3eeff;
+    background-image: url(~assets/img/fhw_invite/car_flower.jpg);
+    background-position: 20px -6px;
+    background-size: cover;
+    background-clip: text;
+    color: transparent;
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0.5;
+    transition: all 0.4s ease;
+    animation: flowFlowerBK 8s infinite alternate 0s ease-in-out;
+
     &:hover {
-      text-decoration: underline;
+      opacity: 1;
     }
   }
-  p {
-    padding: 10px 0;
-    margin-bottom: 15px;
-    img {
-      width: 100%;
-      height: auto;
-      margin: 10px 0;
+
+  .markdown-box {
+    transition: all 2s ease;
+    height: calc(@hideHeight - 33px - 20px);
+    overflow: hidden;
+    width: 100%;
+    font-weight: 500;
+    .hljs {
       margin-bottom: 15px;
     }
-    > code {
-      color: #c7254e;
-      border-radius: 4px;
-      padding: 2px 4px;
-      background-color: #fff5ea;
-      border: none;
-      font-size: 13px;
-      white-space: pre-wrap;
-      vertical-align: middle;
-      margin: 0 3px;
+    a {
+      color: #3194d0;
+      text-decoration: none;
+      padding: 0 3px;
+      &:hover {
+        text-decoration: underline;
+      }
     }
+    p {
+      padding: 10px 0;
+      margin-bottom: 15px;
+      img {
+        width: 100%;
+        height: auto;
+        margin: 10px 0;
+        margin-bottom: 15px;
+      }
+      > code {
+        color: #c7254e;
+        border-radius: 4px;
+        padding: 2px 4px;
+        background-color: #fff5ea;
+        border: none;
+        font-size: 13px;
+        white-space: pre-wrap;
+        vertical-align: middle;
+        margin: 0 3px;
+      }
+    }
+  }
+  .show-all {
+    height: auto;
+  }
+  .fliter-bg-box {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: -1;
+    content: '';
+    filter: blur(80px);
+    background: url(~assets/img/1469.jpg) 50% center / cover no-repeat fixed
+      rgb(255, 255, 255);
+    height: 100%;
+    width: 100%;
+  }
+}
+.show-all {
+  height: auto;
+}
+@keyframes flowFlowerBK {
+  0% {
+    background-position: -118px -86px;
+  }
+  100% {
+    background-position: -160px -6px;
   }
 }
 </style>
