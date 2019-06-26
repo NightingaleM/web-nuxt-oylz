@@ -69,7 +69,7 @@ async function createApp(ssrContext) {
       dateErr: null,
       error(err) {
         err = err || null
-        app.context._errored = !!err
+        app.context._errored = Boolean(err)
         err = err ? normalizeError(err) : null
         const nuxt = this.nuxt || this.$options.nuxt
         nuxt.dateErr = Date.now()
@@ -101,7 +101,8 @@ async function createApp(ssrContext) {
     payload: ssrContext ? ssrContext.payload : undefined,
     req: ssrContext ? ssrContext.req : undefined,
     res: ssrContext ? ssrContext.res : undefined,
-    beforeRenderFns: ssrContext ? ssrContext.beforeRenderFns : undefined
+    beforeRenderFns: ssrContext ? ssrContext.beforeRenderFns : undefined,
+    ssrContext
   })
 
   const inject = function (key, value) {
@@ -129,8 +130,13 @@ async function createApp(ssrContext) {
 
   // Plugin execution
 
-  if (typeof nuxt_plugin_axios_201c6546 === 'function') await nuxt_plugin_axios_201c6546(app.context, inject)
-  if (typeof nuxt_plugin_axios_54e49ad0 === 'function') await nuxt_plugin_axios_54e49ad0(app.context, inject)
+  if (typeof nuxt_plugin_axios_201c6546 === 'function') {
+    await nuxt_plugin_axios_201c6546(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_axios_54e49ad0 === 'function') {
+    await nuxt_plugin_axios_54e49ad0(app.context, inject)
+  }
 
   // If server-side, wait for async component to be resolved first
   if (process.server && ssrContext && ssrContext.url) {

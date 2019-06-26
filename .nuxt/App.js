@@ -42,10 +42,7 @@ export default {
       domProps: {
         id: '__nuxt'
       }
-    }, [
-      loadingEl,
-      transitionEl
-    ])
+    }, [loadingEl, transitionEl])
   },
   data: () => ({
     isOnline: true,

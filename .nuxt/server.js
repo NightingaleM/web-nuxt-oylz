@@ -1,5 +1,6 @@
 import { stringify } from 'querystring'
 import Vue from 'vue'
+import fetch from 'node-fetch'
 import middleware from './middleware.js'
 import { applyAsyncData, getMatchedComponents, middlewareSeries, promisify, urlJoin, sanitizeComponent } from './utils.js'
 import { createApp, NuxtError } from './index.js'
@@ -9,8 +10,7 @@ import NuxtLink from './components/nuxt-link.server.js' // should be included af
 Vue.component(NuxtLink.name, NuxtLink)
 Vue.component('NLink', NuxtLink)
 
-const debug = require('debug')('nuxt:render')
-debug.color = 4 // force blue color
+if (!global.fetch) { global.fetch = fetch }
 
 const noopApp = () => new Vue({ render: h => h('div') })
 
@@ -63,6 +63,8 @@ export default async (ssrContext) => {
   const beforeRender = async () => {
     // Call beforeNuxtRender() methods
     await Promise.all(ssrContext.beforeRenderFns.map(fn => promisify(fn, { Components, nuxtState: ssrContext.nuxt })))
+    ssrContext.rendered = () => {
+    }
   }
   const renderErrorPage = async () => {
     // Load layout for error page

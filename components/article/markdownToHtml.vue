@@ -15,10 +15,26 @@
 <script>
 import MarkDownIt from 'markdown-it'
 import api from '~/api/index.js'
-import hljs from 'highlightjs'
+import hljs from 'highlight.js'
+import javascript from 'highlight.js/lib/languages/javascript'
+import css from 'highlight.js/lib/languages/css'
+import http from 'highlight.js/lib/languages/http'
+import bash from 'highlight.js/lib/languages/bash'
+import json from 'highlight.js/lib/languages/json'
+import markdown from 'highlight.js/lib/languages/markdown'
+import sql from 'highlight.js/lib/languages/sql'
+import htmlbars from 'highlight.js/lib/languages/htmlbars'
+hljs.registerLanguage('javascript', javascript)
+hljs.registerLanguage('css', css)
+hljs.registerLanguage('http', http)
+hljs.registerLanguage('bash', bash)
+hljs.registerLanguage('json', json)
+hljs.registerLanguage('markdown', markdown)
+hljs.registerLanguage('sql', sql)
+hljs.registerLanguage('htmlbars', htmlbars)
 // import 'highlightjs/styles/github.css'
 // import 'highlightjs/styles/brown_paper.css'// 砂纸背景
-import 'highlightjs/styles/monokai-sublime.css' // sublime 风格 dark
+import 'highlight.js/styles/monokai-sublime.css' // sublime 风格 dark
 
 export default {
   props: ['title', 'md'],
