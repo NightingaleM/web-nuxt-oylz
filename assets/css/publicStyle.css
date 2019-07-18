@@ -19,15 +19,21 @@ ol, ul, li {
   list-style: none;
 }
 
+.flex-hold-grow {
+  flex-grow: 1
+}
+
+/* 阿里云的艺术字 */
+
 @font-face {
   font-family: 'webfont';
   font-display: swap;
-  src: url('//at.alicdn.com/t/webfont_22bp8hcasfq.eot');
+  src: url('//at.alicdn.com/t/webfont_wm3uuyqvv8.eot');
   /* IE9*/
-  src: url('//at.alicdn.com/t/webfont_22bp8hcasfq.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('//at.alicdn.com/t/webfont_22bp8hcasfq.woff2') format('woff2'), url('//at.alicdn.com/t/webfont_22bp8hcasfq.woff') format('woff'), /* chrome、firefox */
-  url('//at.alicdn.com/t/webfont_22bp8hcasfq.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-  url('//at.alicdn.com/t/webfont_22bp8hcasfq.svg#杨任东竹石体-Bold') format('svg');
+  src: url('//at.alicdn.com/t/webfont_wm3uuyqvv8.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/webfont_wm3uuyqvv8.woff2') format('woff2'), url('//at.alicdn.com/t/webfont_wm3uuyqvv8.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/webfont_wm3uuyqvv8.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/webfont_wm3uuyqvv8.svg#杨任东竹石体-Bold') format('svg');
   /* iOS 4.1- */
 }
 
@@ -39,6 +45,46 @@ ol, ul, li {
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* 背景为花（图）的字的 --- 父元素 */
+
+.css_flower_font {
+  background-color: #fff;
+  background-image: url(~assets/img/fhw_invite/car_flower.jpg);
+  background-size: cover;
+  background-clip: text;
+  color: transparent;
+  background-position: -118px -80px;
+}
+
+.css_flower_font_8 {
+  background-color: #fff;
+  background-image: url(~assets/img/fhw_invite/car_flower.jpg);
+  background-size: cover;
+  background-clip: text;
+  color: transparent;
+  animation: flow_flower_background 8s infinite alternate 0s ease;
+}
+
+.css_flower_font_15 {
+  background-color: #fff;
+  background-image: url(~assets/img/fhw_invite/car_flower.jpg);
+  background-size: cover;
+  background-clip: text;
+  color: transparent;
+  animation: flow_flower_background 15s infinite alternate 0s ease;
+}
+
+@keyframes flow_flower_background {
+  0% {
+    background-position: -118px -86px;
+  }
+  100% {
+    background-position: -160px -6px;
+  }
+}
+
+/* 穿透字体 */
 
 /* 
 https://cssfx.dev/
@@ -81,3 +127,9 @@ https://cssfx.dev/
 }
 
 /* ----------------------------- */
+
+/* 毛玻璃的背景图设定 */
+
+.filter_bg {
+  background-image: url(~assets/img/1469.jpg);
+}

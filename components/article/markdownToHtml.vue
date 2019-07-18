@@ -1,15 +1,15 @@
 <template>
   <div id="markdown-to-html" :class="[{'show-all':showAll}]">
-    <h2 class="title-box">
-      {{title}}
-      <span class="title"></span>
-    </h2>
+    <div class="title-box">
+      <h2 class="title css_flower_font_15">{{title}}</h2>
+      <span class="tag" v-for="(item,index) in tags" :key="index">{{item}}</span>
+    </div>
     <article :class="['markdown-box',{'show-all':showAll}]" v-html="mdText"></article>
     <div
-      :class="['mk-btn',showAll ? 'hide':'show']"
+      :class="['mk-btn','css_flower_font_8',showAll ? 'hide':'show']"
       @click="showAll = !showAll"
     >{{showAll?'CLOSE':'SHOW'}}</div>
-    <div class="fliter-bg-box"></div>
+    <div class="filter-bg-box filter_bg"></div>
   </div>
 </template>
 <script>
@@ -21,7 +21,17 @@ import hljs from 'highlightjs'
 import 'highlightjs/styles/monokai-sublime.css' // sublime 风格 dark
 
 export default {
-  props: ['title', 'md'],
+  props: {
+    title: {
+      type: String
+    },
+    md: {
+      type: String
+    },
+    tags: {
+      type: Array
+    }
+  },
   data() {
     return {
       mdText: '',
@@ -78,17 +88,17 @@ export default {
   z-index: 1;
 
   .title-box {
-    position: sticky;
-    top: 0;
-    cursor: pointer;
-    background-color: #fff;
-    background-image: url(~assets/img/fhw_invite/car_flower.jpg);
-    background-size: cover;
-    background-clip: text;
-    color: transparent;
-    animation: flowFlowerBK 15s infinite alternate 0s ease-in-out;
-    // .title {
-    // }
+    vertical-align: text-bottom;
+    .title {
+      display: inline-block;
+    }
+    .tag {
+      vertical-align: text-bottom;
+      margin-left: 15px;
+      text-decoration: underline;
+      color: #000;
+      cursor: pointer;
+    }
   }
   .mk-btn {
     cursor: pointer;
@@ -99,17 +109,10 @@ export default {
     left: 50%;
     transform: translateX(-50%);
     border: 1px solid rgba(0, 0, 0, 0.24);
-    // background-color: #d3eeff;
-    background-image: url(~assets/img/fhw_invite/car_flower.jpg);
-    background-position: 20px -6px;
-    background-size: cover;
-    background-clip: text;
-    color: transparent;
     font-size: 16px;
     font-weight: bold;
     opacity: 0.5;
     transition: all 0.4s ease;
-    animation: flowFlowerBK 8s infinite alternate 0s ease-in-out;
 
     &:hover {
       opacity: 1;
@@ -158,7 +161,7 @@ export default {
   .show-all {
     height: auto;
   }
-  .fliter-bg-box {
+  .filter-bg-box {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -166,22 +169,21 @@ export default {
     bottom: 0px;
     z-index: -1;
     content: '';
-    filter: blur(80px);
-    background: url(~assets/img/1469.jpg) 50% center / cover no-repeat fixed
-      rgb(255, 255, 255);
+    filter: blur(40px);
+    background-position-x: 50%;
+    background-position-y: center;
+    background-size: cover;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-attachment: fixed;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgb(255, 255, 255);
     height: 100%;
     width: 100%;
   }
 }
 .show-all {
   height: auto;
-}
-@keyframes flowFlowerBK {
-  0% {
-    background-position: -118px -86px;
-  }
-  100% {
-    background-position: -160px -6px;
-  }
 }
 </style>

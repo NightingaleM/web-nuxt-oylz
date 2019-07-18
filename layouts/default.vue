@@ -1,17 +1,26 @@
 <template>
-  <div class="home-layout">
+  <div class="home-layout filter_bg">
+    <headerNav />
     <section class="home-paper">
-      <nuxt/>
+      <nuxt />
     </section>
   </div>
 </template>
+
+<script>
+import headerNav from '~/components/public/head_nav'
+export default {
+  components: {
+    headerNav
+  }
+}
+</script>
 
 
 <style scoped>
 .home-layout {
   width: 100%;
   min-height: 100vh;
-  background-image: url(~assets/img/1469.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -21,8 +30,9 @@
     #dbf5f1 0%,
     #9be4d8 100%
   ); */
-  padding: 0 10px;
-  padding-top: 100px;
+  /* padding: 0 10px; */
+  /* padding-top: 100px; */
+  padding-top: 0;
   padding-bottom: 200px;
   background-attachment: fixed;
 }
@@ -36,7 +46,8 @@
 }
 @media (max-width: 1000px) {
   .home-layout {
-    padding-top: 20px;
+    /* padding-top: 20px; */
+    padding-top: 0;
     padding-bottom: 20px;
   }
   .home-paper {
@@ -45,7 +56,8 @@
 }
 @media (min-width: 1000px) {
   .home-layout {
-    padding-top: 100px;
+    /* padding-top: 100px; */
+    padding-top: 0;
     padding-bottom: 200px;
   }
   .home-paper {
