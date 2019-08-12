@@ -11,7 +11,7 @@ import _b1de48d8 from '../layouts/fullpage.vue'
 const layouts = { "_default": _6f6c098b,"_fullpage": _b1de48d8 }
 
 export default {
-  head: {"title":"oylz.nuxt-web","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1"},{"hid":"description","name":"description","content":"My fine Nuxt.js project"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
+  head: {"title":"oylz.nuxt-web","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1"},{"hid":"description","name":"description","content":"欧阳lz的个人博客～"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
 
   render(h, props) {
     const loadingEl = h('NuxtLoading', { ref: 'loading' })

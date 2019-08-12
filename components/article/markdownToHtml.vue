@@ -113,15 +113,25 @@ export default {
     font-weight: bold;
     opacity: 0.5;
     transition: all 0.4s ease;
+    width: 73px;
 
     &:hover {
       opacity: 1;
     }
   }
-
+  .hide {
+    position: sticky;
+    bottom: 0;
+    width: 73px;
+    text-align: center;
+    left: 50%;
+    // transform: none;
+    background: #000;
+    color: #eee;
+  }
   .markdown-box {
     transition: all 2s ease;
-    height: calc(@hideHeight - 33px - 20px);
+    max-height: calc(@hideHeight - 33px - 20px);
     overflow: hidden;
     width: 100%;
     font-weight: 500;
@@ -160,6 +170,7 @@ export default {
   }
   .show-all {
     height: auto;
+    max-height: none;
   }
   .filter-bg-box {
     position: absolute;
