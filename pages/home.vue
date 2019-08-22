@@ -14,17 +14,16 @@
 <script>
 import markdownToHtml from '~/components/article/markdownToHtml.vue'
 import api from '~/api/index.js'
-
+import { scrollbarToWindowBottom, throttle } from '~/plugins/public.js'
 export default {
   components: {
     markdownToHtml
   },
   async asyncData({ app, error, req, store, $axios }) {
     let [articleLists] = await Promise.all([$axios(api.getArticleList())])
-    console.log('+++++++++++++++++++++++++++++++')
-    console.log(articleLists)
-    console.log('-----------------------------')
     return {
+      page: 1,
+      count: 5,
       total: articleLists.data.result.total,
       perPage: articleLists.data.result.perPage,
       lastPage: articleLists.data.result.lastPage,
@@ -33,6 +32,35 @@ export default {
   },
   data() {
     return {}
+  },
+  methods: {
+    async getArticleList(page, count) {
+      let { data: articleRes } = await this.$axios(
+        api.getArticleList({ page, count })
+      )
+
+      this.total = articleRes.result.total
+      this.perPage = articleRes.result.perPage
+      this.lastPage = articleRes.result.lastPage
+      this.articleLists.push(...articleRes.result.data)
+    }
+  },
+  watch: {
+    async page(v) {
+      await this.getArticleList(v, this.count)
+    }
+  },
+  computed: {},
+  mounted() {
+    window.addEventListener(
+      'scroll',
+      throttle(() => {
+        if (scrollbarToWindowBottom() < 200) {
+          this.page =
+            this.page * this.count > this.total ? this.page : this.page + 1
+        }
+      }, 200)
+    )
   }
 }
 </script>
