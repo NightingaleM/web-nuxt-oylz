@@ -6,6 +6,7 @@
       :md="item.content"
       :title="item.title"
       :tags="item.tags.map(e=>e.tag)"
+      :user="item.user"
     ></markdownToHtml>
   </div>
 </template>
@@ -20,7 +21,9 @@ export default {
   },
   async asyncData({ app, error, req, store, $axios }) {
     let [articleLists] = await Promise.all([$axios(api.getArticleList())])
-    console.log(articleLists.data)
+    console.log('+++++++++++++++++++++++++++++++')
+    console.log(articleLists)
+    console.log('-----------------------------')
     return {
       total: articleLists.data.result.total,
       perPage: articleLists.data.result.perPage,

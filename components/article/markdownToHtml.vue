@@ -2,6 +2,7 @@
   <div id="markdown-to-html" :class="[{'show-all':showAll}]">
     <div class="title-box">
       <h2 class="title css_flower_font_15">{{title}}</h2>
+      <span class="user-name">- {{user.username}}</span>
       <span class="tag" v-for="(item,index) in tags" :key="index">{{item}}</span>
     </div>
     <article :class="['markdown-box',{'show-all':showAll}]" v-html="mdText"></article>
@@ -22,6 +23,9 @@ import 'highlightjs/styles/monokai-sublime.css' // sublime 风格 dark
 
 export default {
   props: {
+    user: {
+      type: Object
+    },
     title: {
       type: String
     },
@@ -91,6 +95,9 @@ export default {
     vertical-align: text-bottom;
     .title {
       display: inline-block;
+    }
+    .user-name {
+      font-size: 12px;
     }
     .tag {
       vertical-align: text-bottom;

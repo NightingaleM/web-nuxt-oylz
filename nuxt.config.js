@@ -75,5 +75,10 @@ module.exports = {
       changeOrigin: true,
       ws: false
     },
+    '/oy/papi': {
+      target: 'http://127.0.0.1:2222',
+      changeOrigin: true,
+      ws: false
+    },
   },
 }
