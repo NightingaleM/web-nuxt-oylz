@@ -29,7 +29,7 @@ export default {
   }
   .o {
     display: block;
-    background-image: url('//oss.oylz.site/avatar.png');
+    background-image: url('//oyrc-pic.oss-cn-shenzhen.aliyuncs.com/avatar.png');
     background-position: center;
     background-size: cover;
     font-size: 44.5px;
