@@ -5,7 +5,7 @@
         <h1>punchi</h1>
         <p>web前端工程师</p>
       </section>
-      <img src="~assets/img/avatar.png" alt class="avatar">
+      <img src="//oss.oylz.site/avatar.png" alt class="avatar" />
     </header>
     <section class="experience">
       <h2 class="section-title">项目经验</h2>

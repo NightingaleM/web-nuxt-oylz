@@ -84,7 +84,7 @@ export default {
 #welcome-page {
   width: 100vw;
   height: 100vh;
-  background-image: url(~assets/img/fhw_invite/bg_cloud.jpg);
+  background-image: url(//oss.oylz.site/fhw_invite/bg_cloud.webp);
   .welcome-page-box {
     position: relative;
     width: 100%;
@@ -114,29 +114,29 @@ export default {
         animation: changeMaskSize_colorful ease-out 3s;
       }
       .filter-top-left {
-        background-image: url(~assets/img/fhw_invite/left_top_hover.png);
-        mask-image: url(~assets/img/fhw_invite/m.png);
+        background-image: url(//oss.oylz.site/fhw_invite/left_top_hover.webp);
+        mask-image: url(//oss.oylz.site/fhw_invite/m.webp);
         // mask-size: 1500px;
       }
       .filter-top-right {
         background-position: right top;
         // mask-position: top right;
-        background-image: url(~assets/img/fhw_invite/right_top_hover.png);
-        mask-image: url(~assets/img/fhw_invite/m.png);
+        background-image: url(//oss.oylz.site/fhw_invite/right_top_hover.webp);
+        mask-image: url(//oss.oylz.site/fhw_invite/m.webp);
         // mask-size: 1500px;
       }
       .filter-bot-left {
         background-position: left bottom;
         // mask-position: left bottom;
-        background-image: url(~assets/img/fhw_invite/left_bot_hover.png);
-        mask-image: url(~assets/img/fhw_invite/m.png);
+        background-image: url(//oss.oylz.site/fhw_invite/left_bot_hover.webp);
+        mask-image: url(//oss.oylz.site/fhw_invite/m.webp);
         // mask-size: 1500px;
       }
       .filter-bot-right {
         background-position: right bottom;
         // mask-position: right bottom;
-        background-image: url(~assets/img/fhw_invite/right_bot_hover.png);
-        mask-image: url(~assets/img/fhw_invite/m.png);
+        background-image: url(//oss.oylz.site/fhw_invite/right_bot_hover.webp);
+        mask-image: url(//oss.oylz.site/fhw_invite/m.webp);
         // mask-size: 1500px;
       }
       .colourless {
@@ -149,29 +149,29 @@ export default {
         background-size: 76%;
       }
       .colourless-top-left {
-        background-image: url(~assets/img/fhw_invite/left_top.png);
-        mask-image: url(~assets/img/fhw_invite/left_top_b_m.png);
+        background-image: url(//oss.oylz.site/fhw_invite/left_top.webp);
+        mask-image: url(//oss.oylz.site/fhw_invite/left_top_b_m.webp);
         mask-size: 1500px;
       }
       .colourless-top-right {
         background-position: right top;
         mask-position: top right;
-        background-image: url(~assets/img/fhw_invite/right_top.png);
-        mask-image: url(~assets/img/fhw_invite/right_top_b_m.png);
+        background-image: url(//oss.oylz.site/fhw_invite/right_top.webp);
+        mask-image: url(//oss.oylz.site/fhw_invite/right_top_b_m.webp);
         mask-size: 1500px;
       }
       .colourless-bot-left {
         background-position: left bottom;
         mask-position: left bottom;
-        background-image: url(~assets/img/fhw_invite/left_bot.png);
-        mask-image: url(~assets/img/fhw_invite/left_bot_b_m.png);
+        background-image: url(//oss.oylz.site/fhw_invite/left_bot.webp);
+        mask-image: url(//oss.oylz.site/fhw_invite/left_bot_b_m.webp);
         mask-size: 1500px;
       }
       .colourless-bot-right {
         background-position: right bottom;
         mask-position: right bottom;
-        background-image: url(~assets/img/fhw_invite/right_bot.png);
-        mask-image: url(~assets/img/fhw_invite/right_bot_b_m.png);
+        background-image: url(//oss.oylz.site/fhw_invite/right_bot.webp);
+        mask-image: url(//oss.oylz.site/fhw_invite/right_bot_b_m.webp);
         mask-size: 1500px;
       }
     }
@@ -197,26 +197,26 @@ export default {
       opacity: 1;
     }
     .l-bird-box-top-left {
-      background-image: url(~assets/img/fhw_invite/bird_l_1.png);
+      background-image: url(//oss.oylz.site/fhw_invite/bird_l_1.webp);
       top: @l;
       left: @l;
       transform: translate(-50%, -50%);
     }
     .l-bird-box-top-right {
       height: 300px;
-      background-image: url(~assets/img/fhw_invite/bird_r_2.png);
+      background-image: url(//oss.oylz.site/fhw_invite/bird_r_2.webp);
       top: @l;
       left: @m;
       transform: translate(-50%, -50%);
     }
     .l-bird-box-bot-left {
-      background-image: url(~assets/img/fhw_invite/bird_l_2.png);
+      background-image: url(//oss.oylz.site/fhw_invite/bird_l_2.webp);
       top: @m;
       left: @l;
       transform: translate(-50%, -50%);
     }
     .l-bird-box-bot-right {
-      background-image: url(~assets/img/fhw_invite/bird_r_1.png);
+      background-image: url(//oss.oylz.site/fhw_invite/bird_r_1.webp);
       top: @m;
       left: @m;
       transform: translate(-50%, -50%);
@@ -259,7 +259,7 @@ export default {
       transform: translate(-50%, -50%);
       color: transparent;
       animation: r_spin ease 5s 0s, showColor 4s both 4s;
-      background-image: url(~assets/img/fhw_invite/car_flower.jpg);
+      background-image: url(//oss.oylz.site/fhw_invite/car_flower.jpg);
       background-position: 20px -6px;
       background-size: cover;
       background-clip: text;
@@ -296,12 +296,12 @@ export default {
     .top-b {
       margin-bottom: -20px;
       .gray-box {
-        background-image: url(~assets/img/fhw_invite/f1.png);
+        background-image: url(//oss.oylz.site/fhw_invite/f1.webp);
         filter: grayscale(100%);
       }
       .colorful-box {
-        background-image: url(~assets/img/fhw_invite/f1.png);
-        mask-image: url(~assets/img/fhw_invite/big_m.png);
+        background-image: url(//oss.oylz.site/fhw_invite/f1.webp);
+        mask-image: url(//oss.oylz.site/fhw_invite/big_m.webp);
         animation: spinColorful_left 4s both 3s ease-in;
       }
     }
@@ -309,11 +309,11 @@ export default {
       margin-top: -20px;
       .gray-box {
         filter: grayscale(100%);
-        background-image: url(~assets/img/fhw_invite/f2.png);
+        background-image: url(//oss.oylz.site/fhw_invite/f2.webp);
       }
       .colorful-box {
-        background-image: url(~assets/img/fhw_invite/f2.png);
-        mask-image: url(~assets/img/fhw_invite/big_m.png);
+        background-image: url(//oss.oylz.site/fhw_invite/f2.webp);
+        mask-image: url(//oss.oylz.site/fhw_invite/big_m.webp);
         animation: spinColorful_right 4s both 3s ease-in;
       }
     }

@@ -50,7 +50,7 @@ ol, ul, li {
 
 .css_flower_font {
   background-color: #fff;
-  background-image: url(~assets/img/fhw_invite/car_flower.jpg);
+  background-image: url(//oss.oylz.site/fhw_invite/car_flower.jpg);
   background-size: cover;
   background-clip: text;
   color: transparent;
@@ -59,7 +59,7 @@ ol, ul, li {
 
 .css_flower_font_8 {
   background-color: #fff;
-  background-image: url(~assets/img/fhw_invite/car_flower.jpg);
+  background-image: url(//oss.oylz.site/fhw_invite/car_flower.jpg);
   background-size: cover;
   background-clip: text;
   color: transparent;
@@ -68,7 +68,7 @@ ol, ul, li {
 
 .css_flower_font_15 {
   background-color: #fff;
-  background-image: url(~assets/img/fhw_invite/car_flower.jpg);
+  background-image: url(//oss.oylz.site/fhw_invite/car_flower.jpg);
   background-size: cover;
   background-clip: text;
   color: transparent;
@@ -131,5 +131,5 @@ https://cssfx.dev/
 /* 毛玻璃的背景图设定 */
 
 .filter_bg {
-  background-image: url(~assets/img/1469.jpg);
+  background-image: url(//oss.oylz.site/1469.webp);
 }
