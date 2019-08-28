@@ -1,25 +1,5 @@
-// 获取视窗距离页面最底部距离
-export const scrollbarToWindowBottom = () => {
-  const windowHeight = document.documentElement.clientHeight
-  const scrollTop =
-    document.documentElement.scrollTop || document.body.scrollTop
-  const txtHeight = document.body.offsetHeight;
-  return (txtHeight - (windowHeight + scrollTop))
-}
-// 节流函数
-export const throttle = (fn, delay = 200) => {
-  let canUse = true
-  return () => {
-    if (canUse) {
-      canUse = false
-      fn.apply(this, arguments)
-      setTimeout(() => canUse = true, delay)
-    } else {
-    }
-  }
-}
 // 获取cookie
-export const getCookie = c_name => {
+const getCookie = c_name => {
   if (document.cookie.length > 0) { //先查询cookie是否为空，为空就return ""
     let c_start = document.cookie.indexOf(c_name + "=") //通过String对象的indexOf()来检查这个cookie是否存在，不存在就为 -1
     if (c_start != -1) {
@@ -33,7 +13,7 @@ export const getCookie = c_name => {
 }
 
 // 设置cookie
-export const setCookie = (c_name, value, expiredays) => {
+const setCookie = (c_name, value, expiredays) => {
   var exdate = new Date();
   exdate.setDate(exdate.getDate() + expiredays);
   document.cookie = c_name + "=" + escape(value) + ((expiredays == null) ? "" : ";expires=" + exdate.toGMTString());

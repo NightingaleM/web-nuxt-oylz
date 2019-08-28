@@ -12,11 +12,13 @@
     </div>-->
 
     <div class="flex-hold-grow"></div>
+    <div class="go-loading" @click="removeCookie">还想看</div>
     <div class="filter-bg-box filter_bg"></div>
   </header>
 </template>
 
 <script>
+import { getCookie, setCookie } from '~/plugins/public.js'
 export default {
   data() {
     return {
@@ -34,6 +36,20 @@ export default {
         //   link: '/home'
         // }
       ]
+    }
+  },
+  methods: {
+    removeCookie() {
+      setCookie('oylz-first-time', true, -1)
+      if (
+        navigator.userAgent.match(
+          /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+        )
+      ) {
+        location.href = '/loading.html'
+      } else {
+        location.href = '/loading'
+      }
     }
   }
 }
