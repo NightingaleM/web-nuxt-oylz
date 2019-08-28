@@ -14,7 +14,12 @@
 <script>
 import markdownToHtml from '~/components/article/markdownToHtml.vue'
 import api from '~/api/index.js'
-import { scrollbarToWindowBottom, throttle } from '~/plugins/public.js'
+import {
+  scrollbarToWindowBottom,
+  throttle,
+  getCookie,
+  setCookie
+} from '~/plugins/public.js'
 export default {
   components: {
     markdownToHtml
@@ -51,6 +56,14 @@ export default {
     }
   },
   computed: {},
+  created() {
+    if (process.client) {
+      let status = getCookie('oylzft')
+      if (!status) {
+        this.$router.replace('/welcome')
+      }
+    }
+  },
   mounted() {
     window.addEventListener(
       'scroll',

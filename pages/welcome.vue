@@ -36,7 +36,7 @@ export default {
       routerList: [
         {
           name: '首页',
-          to: '/home'
+          to: '/'
         },
         {
           name: '备忘录',

@@ -12,7 +12,7 @@
     </div>-->
 
     <div class="flex-hold-grow"></div>
-    <div class="go-loading" @click="removeCookie">还想看</div>
+    <!-- <div class="go-loading" @click="removeCookie">还想看</div> -->
     <div class="filter-bg-box filter_bg"></div>
   </header>
 </template>
@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     removeCookie() {
-      setCookie('oylz-first-time', true, -1)
+      setCookie('oylzft', true, -1)
       if (
         navigator.userAgent.match(
           /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
@@ -48,7 +48,7 @@ export default {
       ) {
         location.href = '/loading.html'
       } else {
-        location.href = '/loading'
+        location.href = '/welcome'
       }
     }
   }
