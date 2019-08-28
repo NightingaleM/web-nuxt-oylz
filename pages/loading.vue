@@ -74,11 +74,9 @@ export default {
         clearInterval(timer)
       }
     }, 1000)
-    let status = getCookie('oylz-first-time')
+    let status = getCookie('oylzft')
     if (!status) {
-      setCookie('oylz-first-time', true, 10)
-    } else {
-      location.href = '/'
+      setCookie('oylzft', 1, 10)
     }
     // setTimeout(() => {
 
