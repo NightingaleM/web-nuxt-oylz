@@ -133,3 +133,27 @@ https://cssfx.dev/
 .filter_bg {
   background-image: url(//oyrc-pic.oss-cn-shenzhen.aliyuncs.com/1469.webp);
 }
+
+/* ----------------------------- */
+
+/* markdown 图片限制大小 */
+
+.markdown-box img {
+  display: block;
+  width: auto !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 0 !important;
+  /* margin-bottom: 10px !important; */
+  margin-bottom: 10px;
+}
+
+.markdown-box p img {
+  display: block !important;
+  width: auto !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 0 !important;
+  /* margin-bottom: 10px !important; */
+  margin-bottom: 10px;
+}

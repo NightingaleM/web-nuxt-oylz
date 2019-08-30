@@ -25,14 +25,18 @@ export default {
     markdownToHtml
   },
   async asyncData({ app, error, req, store, $axios }) {
-    let [articleLists] = await Promise.all([$axios(api.getArticleList())])
-    return {
-      page: 1,
-      count: 5,
-      total: articleLists.data.result.total,
-      perPage: articleLists.data.result.perPage,
-      lastPage: articleLists.data.result.lastPage,
-      articleLists: articleLists.data.result.data
+    try {
+      let [articleLists] = await Promise.all([$axios(api.getArticleList())])
+      return {
+        page: 1,
+        count: 5,
+        total: articleLists.data.result.total,
+        perPage: articleLists.data.result.perPage,
+        lastPage: articleLists.data.result.lastPage,
+        articleLists: articleLists.data.result.data
+      }
+    } catch (e) {
+      error({ status: 404, message: '获取文章的接口嗝屁了。' })
     }
   },
   data() {
@@ -82,6 +86,9 @@ export default {
         }
       }, 200)
     )
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll')
   }
 }
 </script>
