@@ -4,14 +4,17 @@
     <section class="home-paper">
       <nuxt />
     </section>
+    <footerNav />
   </div>
 </template>
 
 <script>
 import headerNav from '~/components/public/head_nav'
+import footerNav from '~/components/public/footer'
 export default {
   components: {
-    headerNav
+    headerNav,
+    footerNav
   }
 }
 </script>
@@ -33,7 +36,7 @@ export default {
   /* padding: 0 10px; */
   /* padding-top: 100px; */
   padding-top: 0;
-  padding-bottom: 200px;
+  /* padding-bottom: 200px; */
   background-attachment: fixed;
 }
 .home-paper {
@@ -48,7 +51,7 @@ export default {
   .home-layout {
     /* padding-top: 20px; */
     padding-top: 0;
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
   }
   .home-paper {
     width: calc(100vw - 20px);
@@ -58,7 +61,7 @@ export default {
   .home-layout {
     /* padding-top: 100px; */
     padding-top: 0;
-    padding-bottom: 200px;
+    /* padding-bottom: 200px; */
   }
   .home-paper {
     width: 1000px;
