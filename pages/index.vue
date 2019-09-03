@@ -44,6 +44,14 @@ export default {
     return {}
   },
   methods: {
+    changePage() {
+      return throttle(() => {
+        if (scrollbarToWindowBottom() < 200) {
+          this.page =
+            this.page * this.count > this.total ? this.page : this.page + 1
+        }
+      }, 200)
+    },
     async getArticleList(page, count) {
       let { data: articleRes } = await this.$axios(
         api.getArticleList({ page, count })
@@ -78,18 +86,10 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener(
-      'scroll',
-      throttle(() => {
-        if (scrollbarToWindowBottom() < 200) {
-          this.page =
-            this.page * this.count > this.total ? this.page : this.page + 1
-        }
-      }, 200)
-    )
+    window.addEventListener('scroll', this.changePage())
   },
   beforeDestroy() {
-    window.removeEventListener('scroll')
+    window.removeEventListener('scroll', this.changePage())
   }
 }
 </script>
