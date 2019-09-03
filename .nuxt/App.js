@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import NuxtLoading from './components/nuxt-loading.vue'
 
-import '../assets/css/publicStyle.css'
+import '../assets/css/publicStyle.less'
 
 import '../assets/css/hljs.css'
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="home-layout filter_bg">
+  <div :class="['home-layout',filterBg]">
     <headerNav />
     <section class="home-paper">
       <nuxt />
@@ -9,12 +9,16 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import headerNav from '~/components/public/head_nav'
 import footerNav from '~/components/public/footer'
 export default {
   components: {
     headerNav,
     footerNav
+  },
+  computed: {
+    ...mapGetters(['filterBg'])
   }
 }
 </script>

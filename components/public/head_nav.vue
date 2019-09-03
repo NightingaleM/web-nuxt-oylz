@@ -13,12 +13,13 @@
 
     <div class="flex-hold-grow"></div>
     <!-- <div class="go-loading" @click="removeCookie">还想看</div> -->
-    <div class="filter-bg-box filter_bg"></div>
+    <div :class="['filter-bg-box',filterBg]"></div>
   </header>
 </template>
 
 <script>
 import { getCookie, setCookie } from '~/plugins/public.js'
+import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
@@ -37,6 +38,9 @@ export default {
         // }
       ]
     }
+  },
+  computed: {
+    ...mapGetters(['filterBg'])
   },
   methods: {
     removeCookie() {

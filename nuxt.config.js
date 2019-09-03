@@ -34,7 +34,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    '~assets/css/publicStyle.css',
+    '~assets/css/publicStyle.less',
     '~assets/css/hljs.css'
   ],
 

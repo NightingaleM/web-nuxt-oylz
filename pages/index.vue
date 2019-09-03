@@ -5,7 +5,7 @@
       :key="index"
       :md="item.content"
       :title="item.title"
-      :tags="item.tags.map(e=>e.tag)"
+      :tags="item.tags?item.tags.map(e=>e.tag):[]"
       :user="item.user"
     ></markdownToHtml>
   </div>
@@ -36,6 +36,7 @@ export default {
         articleLists: articleLists.data.result.data
       }
     } catch (e) {
+      console.log(e)
       error({ status: 404, message: '获取文章的接口嗝屁了。' })
     }
   },

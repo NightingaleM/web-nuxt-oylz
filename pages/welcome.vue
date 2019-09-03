@@ -264,7 +264,7 @@ export default {
       transform: translate(-50%, -50%);
       color: transparent;
       animation: r_spin ease 5s 0s, showColor 4s both 4s;
-      background-image: url(//oyrc-pic.oss-cn-shenzhen.aliyuncs.com/fhw_invite/car_flower.jpg);
+      background-image: url(//oyrc-pic.oss-cn-shenzhen.aliyuncs.com/fhw_invite/litter_flower.webp);
       background-position: 20px -6px;
       background-size: cover;
       background-clip: text;

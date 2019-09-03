@@ -1,5 +1,8 @@
 <template>
-  <div id="markdown-to-html" :class="[{'show-all':showAll}]">
+  <div
+    id="markdown-to-html"
+    :class="[isLight?'filter_light_style':'filter_dark_style',{'show-all':showAll}]"
+  >
     <div class="title-box">
       <h2 class="title css_flower_font_15">{{title}}</h2>
       <span class="user-name">- {{user.username}}</span>
@@ -10,15 +13,15 @@
       :class="['mk-btn','css_flower_font_8',showAll ? 'hide':'show']"
       @click="showAll = !showAll"
     >{{showAll?'CLOSE':'SHOW'}}</div>
-    <div class="filter-bg-box filter_bg"></div>
+    <div :class="['filter-bg-box',filterBg]"></div>
   </div>
 </template>
 <script>
-import MarkDownIt from 'markdown-it'
+import { mapState, mapGetters } from 'vuex'
 import api from '~/api/index.js'
-import hljs from 'highlightjs'
+import { parsingMarkDown } from '~/plugins/public.js'
 // import 'highlightjs/styles/github.css'
-// import 'highlightjs/styles/brown_paper.css'// 砂纸背景
+// import 'highlightjs/styles/brown_paper.css' // 砂纸背景
 import 'highlightjs/styles/monokai-sublime.css' // sublime 风格 dark
 
 export default {
@@ -43,32 +46,17 @@ export default {
       showAll: false
     }
   },
+  computed: {
+    ...mapState(['isLight']),
+    ...mapGetters(['filterBg'])
+  },
   methods: {
     initHTMLText() {
-      let result = this.mdEl.render(this.md)
+      let result = parsingMarkDown.render(this.md)
       this.mdText = result
     }
   },
   mounted() {
-    // let res = await this.$axios(api.getArticleList())
-    let md = new MarkDownIt({
-      // this.mdEl = new MarkDownIt({
-      highlight: function(str, lang) {
-        if (lang && hljs.getLanguage(lang)) {
-          try {
-            return `<pre class="hljs language-${lang}"><code>
-              ${hljs.highlight(lang, str, true).value}
-              </code></pre>`
-          } catch (__) {}
-        }
-        return (
-          '<pre class="hljs"><code>' +
-          md.utils.escapeHtml(str) +
-          '</code></pre>'
-        )
-      }
-    })
-    this.mdEl = md
     this.initHTMLText()
   },
   watch: {
@@ -103,7 +91,7 @@ export default {
       vertical-align: text-bottom;
       margin-left: 15px;
       text-decoration: underline;
-      color: #000;
+      // color: #000;
       cursor: pointer;
     }
   }

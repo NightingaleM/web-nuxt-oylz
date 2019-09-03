@@ -17,12 +17,14 @@
         </div>
       </div>
     </div>
+    <div :class="['filter-bg-box',filterBg]"></div>
     <div class="bubble"></div>
   </section>
 </template>
 
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
@@ -33,6 +35,9 @@ export default {
         }
       ]
     }
+  },
+  computed: {
+    ...mapGetters(['filterBg'])
   }
 }
 </script>
@@ -40,9 +45,10 @@ export default {
 .default-footer {
   // height: 90px;
   padding: 10px 0;
-  background-color: rgba(255, 255, 255, 0.733);
+  background-color: rgb(255, 255, 255);
   width: 100%;
   position: relative;
+  z-index: 5;
   .info {
     margin: 0 auto;
     max-width: 1000px;
@@ -54,7 +60,7 @@ export default {
       color: #555;
       font-weight: bold;
       .nop {
-        color: #999;
+        color: #333;
         font-size: 12px;
         text-decoration: line-through red;
       }
@@ -69,6 +75,27 @@ export default {
         }
       }
     }
+  }
+  .filter-bg-box {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: -1;
+    content: '';
+    filter: blur(40px);
+    background-position-x: 50%;
+    background-position-y: center;
+    background-size: cover;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-attachment: fixed;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    width: 100%;
   }
 }
 </style>

@@ -1,3 +1,5 @@
+import MarkDownIt from 'markdown-it'
+import hljs from 'highlightjs'
 // 获取视窗距离页面最底部距离
 export const scrollbarToWindowBottom = () => {
   const windowHeight = document.documentElement.clientHeight
@@ -38,3 +40,22 @@ export const setCookie = (c_name, value, expiredays) => {
   exdate.setDate(exdate.getDate() + expiredays);
   document.cookie = c_name + "=" + escape(value) + ((expiredays == null) ? "" : ";expires=" + exdate.toGMTString());
 }
+// markdown 解析
+
+export const parsingMarkDown = new MarkDownIt({
+  // this.mdEl = new MarkDownIt({
+  highlight: function (str, lang) {
+    if (lang && hljs.getLanguage(lang)) {
+      try {
+        return `<pre class="hljs language-${lang}"><code>
+          ${hljs.highlight(lang, str, true).value}
+          </code></pre>`
+      } catch (__) { }
+    }
+    return (
+      '<pre class="hljs"><code>' +
+      parsingMarkDown.utils.escapeHtml(str) +
+      '</code></pre>'
+    )
+  }
+})
