@@ -30,7 +30,7 @@ export default {
     return {
       friendLinks: [
         {
-          link: 'https://ppysooner.com',
+          link: 'https://happysooner.com',
           name: '远浅'
         }
       ]
