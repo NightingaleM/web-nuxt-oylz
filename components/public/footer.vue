@@ -17,7 +17,7 @@
         </div>
       </div>
     </div>
-    <div :class="['filter-bg-box',filterBg]"></div>
+    <div :class="['filter_bg_box',filterBg]"></div>
     <div class="bubble"></div>
   </section>
 </template>
@@ -44,7 +44,7 @@ export default {
 <style lang="less" scoped>
 .default-footer {
   // height: 90px;
-  padding: 10px 0;
+  padding: 10px 10px;
   background-color: rgb(255, 255, 255);
   width: 100%;
   position: relative;
@@ -75,27 +75,6 @@ export default {
         }
       }
     }
-  }
-  .filter-bg-box {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    z-index: -1;
-    content: '';
-    filter: blur(40px);
-    background-position-x: 50%;
-    background-position-y: center;
-    background-size: cover;
-    background-repeat-x: no-repeat;
-    background-repeat-y: no-repeat;
-    background-attachment: fixed;
-    background-origin: initial;
-    background-clip: initial;
-    background-color: rgb(255, 255, 255);
-    height: 100%;
-    width: 100%;
   }
 }
 </style>

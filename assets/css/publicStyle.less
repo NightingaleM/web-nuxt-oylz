@@ -153,26 +153,106 @@ https://cssfx.dev/
   color: #fff
 }
 
+
+
+.filter_bg_box {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: -1;
+  content: '';
+  filter: blur(40px);
+  background-position-x: 50%;
+  background-position-y: center;
+  background-size: cover;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-attachment: fixed;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: rgb(255, 255, 255);
+  height: 100%;
+  width: 100%;
+}
+
+
+/* ----------------------------- */
+/* 全站 a 标签样式 */
+a {
+  text-decoration: none;
+  color: #6280ca
+}
+
+a:active,
+a:focus,
+a:hover,
+button,
+input,
+textarea {
+  outline: 0
+}
+
+a:hover {
+  // color: #008ae6;
+  color: #00d7c6;
+  text-decoration: underline;
+  -webkit-transition: all linear .2s;
+  transition: all linear .2s
+}
+
 /* ----------------------------- */
 
 /* markdown 图片限制大小 */
-
-.markdown-box img {
-  display: block;
-  width: auto !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  margin-top: 0 !important;
-  /* margin-bottom: 10px !important; */
-  margin-bottom: 10px;
+.markdown-box {
+  transition: all 2s ease;
+  overflow: hidden;
+  width: 100%;
+  font-weight: 500;
+  img {
+    display: block;
+    width: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 0 !important;
+    /* margin-bottom: 10px !important; */
+    margin-bottom: 10px;
+  }
+  
+  p{
+    padding: 10px 0;
+    margin-bottom: 15px;
+    img {
+      display: block !important;
+      width: auto !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      margin-top: 0 !important;
+      /* margin-bottom: 10px !important; */
+      margin-bottom: 10px;
+    }
+    > code {
+      color: #c7254e;
+      border-radius: 4px;
+      padding: 2px 4px;
+      background-color: #fff5ea;
+      border: none;
+      font-size: 13px;
+      white-space: pre-wrap;
+      vertical-align: middle;
+      margin: 0 3px;
+    }
+  }
+  a {
+    color: #3194d0;
+    text-decoration: none;
+    padding: 0 3px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
-.markdown-box p img {
-  display: block !important;
-  width: auto !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  margin-top: 0 !important;
-  /* margin-bottom: 10px !important; */
-  margin-bottom: 10px;
-}
+
+

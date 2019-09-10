@@ -3,6 +3,8 @@ import NuxtLoading from './components/nuxt-loading.vue'
 
 import '../assets/css/publicStyle.less'
 
+import '../assets/css/max_width750.less'
+
 import '../assets/css/hljs.css'
 
 import _6f6c098b from '../layouts/default.vue'

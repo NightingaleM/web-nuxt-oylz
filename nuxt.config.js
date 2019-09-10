@@ -35,6 +35,7 @@ module.exports = {
   */
   css: [
     '~assets/css/publicStyle.less',
+    '~assets/css/max_width750.less',
     '~assets/css/hljs.css'
   ],
 

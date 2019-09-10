@@ -15,7 +15,7 @@
       :class="['mk-btn','css_flower_font_8',showAll ? 'hide':'show']"
       @click="showAll = !showAll"
     >{{showAll?'CLOSE':'SHOW'}}</div>
-    <div :class="['filter-bg-box',filterBg]"></div>
+    <div :class="['filter_bg_box',filterBg]"></div>
   </div>
 </template>
 <script>
@@ -114,49 +114,13 @@ export default {
     color: #eee;
   }
   .markdown-box {
-    transition: all 2s ease;
     max-height: calc(@hideHeight - 33px - 20px);
-    overflow: hidden;
-    width: 100%;
-    font-weight: 500;
-    .hljs {
-      margin-bottom: 15px;
-    }
-    a {
-      color: #3194d0;
-      text-decoration: none;
-      padding: 0 3px;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-    p {
-      padding: 10px 0;
-      margin-bottom: 15px;
-      img {
-        width: 100%;
-        height: auto;
-        margin: 10px 0;
-        margin-bottom: 15px;
-      }
-      > code {
-        color: #c7254e;
-        border-radius: 4px;
-        padding: 2px 4px;
-        background-color: #fff5ea;
-        border: none;
-        font-size: 13px;
-        white-space: pre-wrap;
-        vertical-align: middle;
-        margin: 0 3px;
-      }
-    }
   }
   .show-all {
     height: auto;
     max-height: none;
   }
-  .filter-bg-box {
+  .filter_bg_box {
     position: absolute;
     top: 0px;
     left: 0px;
