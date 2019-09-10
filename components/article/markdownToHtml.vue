@@ -120,27 +120,6 @@ export default {
     height: auto;
     max-height: none;
   }
-  .filter_bg_box {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    z-index: -1;
-    content: '';
-    filter: blur(40px);
-    background-position-x: 50%;
-    background-position-y: center;
-    background-size: cover;
-    background-repeat-x: no-repeat;
-    background-repeat-y: no-repeat;
-    background-attachment: fixed;
-    background-origin: initial;
-    background-clip: initial;
-    background-color: rgb(255, 255, 255);
-    height: 100%;
-    width: 100%;
-  }
 }
 .show-all {
   height: auto;

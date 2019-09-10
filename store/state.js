@@ -1,5 +1,5 @@
 export default () => ({
-  isLight: true,
+  isLight: new Date().getHours() <= 19,
   bgIndex: 1
 })
 

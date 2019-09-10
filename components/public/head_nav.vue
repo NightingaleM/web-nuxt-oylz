@@ -1,5 +1,5 @@
 <template>
-  <header class="head_nav">
+  <header class="head_nav" :class="[isLight?'filter_light_style':'filter_dark_style']">
     <nuxt-link to="/" class="oyrc-title">
       <h1 class="title web-font">OYRC</h1>
     </nuxt-link>
@@ -20,7 +20,7 @@
 
 <script>
 import { getCookie, setCookie, debounce } from '~/plugins/public.js'
-import { mapGetters } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
 import eventHub from '~/plugins/eventHub'
 
 export default {
@@ -44,6 +44,7 @@ export default {
     }
   },
   computed: {
+    ...mapState(['isLight']),
     ...mapGetters(['filterBg'])
   },
   methods: {
@@ -110,6 +111,21 @@ export default {
       color: #000;
       &:hover {
         color: #000;
+      }
+    }
+  }
+}
+.filter_dark_style {
+  .oyrc-title {
+    .title {
+      color: rgb(231, 231, 231);
+    }
+  }
+  .nav-lists {
+    .nav-link {
+      color: #fff;
+      &:hover {
+        color: #fff;
       }
     }
   }

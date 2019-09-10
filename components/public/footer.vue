@@ -1,5 +1,5 @@
 <template>
-  <section class="default-footer">
+  <section class="default-footer" :class="[isLight?'filter_light_style':'filter_dark_style']">
     <div class="info">
       <pre class="bullshit">
 世上无难事，只<span class="nop">要你放弃</span>怕有心人
@@ -24,7 +24,8 @@
 
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
+
 export default {
   data() {
     return {
@@ -37,6 +38,7 @@ export default {
     }
   },
   computed: {
+    ...mapState(['isLight']),
     ...mapGetters(['filterBg'])
   }
 }
@@ -73,6 +75,22 @@ export default {
         &:hover {
           text-decoration: underline;
         }
+      }
+    }
+  }
+}
+.filter_dark_style {
+  .info {
+    .bullshit {
+      color: rgb(228, 228, 228);
+      .nop {
+        color: rgb(146, 146, 146);
+        text-decoration: line-through red;
+      }
+    }
+    .other {
+      a {
+        color: rgb(228, 228, 228);
       }
     }
   }

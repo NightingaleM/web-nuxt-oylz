@@ -1,21 +1,25 @@
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
+  font-family             : 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size               : 16px;
+  word-spacing            : 1px;
+  -ms-text-size-adjust    : 100%;
   -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+  -moz-osx-font-smoothing : grayscale;
+  -webkit-font-smoothing  : antialiased;
+  box-sizing              : border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  margin    : 0;
+  padding   : 0;
 }
 
-ol, ul, li {
+ol,
+ul,
+li {
   list-style: none;
 }
 
@@ -26,233 +30,252 @@ ol, ul, li {
 /* 阿里云的艺术字 */
 
 @font-face {
-  font-family: 'webfont';
+  font-family : 'webfont';
   font-display: swap;
-  src: url('//at.alicdn.com/t/webfont_wm3uuyqvv8.eot');
+  src         : url('//at.alicdn.com/t/webfont_wm3uuyqvv8.eot');
   /* IE9*/
-  src: url('//at.alicdn.com/t/webfont_wm3uuyqvv8.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('//at.alicdn.com/t/webfont_wm3uuyqvv8.woff2') format('woff2'), url('//at.alicdn.com/t/webfont_wm3uuyqvv8.woff') format('woff'), /* chrome、firefox */
-  url('//at.alicdn.com/t/webfont_wm3uuyqvv8.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-  url('//at.alicdn.com/t/webfont_wm3uuyqvv8.svg#杨任东竹石体-Bold') format('svg');
+  src: url('//at.alicdn.com/t/webfont_wm3uuyqvv8.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('//at.alicdn.com/t/webfont_wm3uuyqvv8.woff2') format('woff2'), url('//at.alicdn.com/t/webfont_wm3uuyqvv8.woff') format('woff'),
+    /* chrome、firefox */
+    url('//at.alicdn.com/t/webfont_wm3uuyqvv8.ttf') format('truetype'),
+    /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('//at.alicdn.com/t/webfont_wm3uuyqvv8.svg#杨任东竹石体-Bold') format('svg');
   /* iOS 4.1- */
 }
 
 .web-font {
-  font-family: "webfont" !important;
-  font-size: 16px;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
+  font-family              : "webfont" !important;
+  font-size                : 16px;
+  font-style               : normal;
+  -webkit-font-smoothing   : antialiased;
   -webkit-text-stroke-width: 0.2px;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing  : grayscale;
 }
 
-/* 背景为花（图）的字的 --- 父元素 */
+#__nuxt {
+  /* 背景为花（图）的字的 --- 父元素 */
 
-.css_flower_font {
-  background-color: #333;
-  background-image: url(//oyrc-pic.oss-cn-shenzhen.aliyuncs.com/fhw_invite/litter_flower.webp);
-  background-size: cover;
-  background-clip: text;
-  color: transparent;
-  background-position: -118px -80px;
-}
-
-.css_flower_font_8 {
-  background-color: #333;
-  background-image: url(//oyrc-pic.oss-cn-shenzhen.aliyuncs.com/fhw_invite/litter_flower.webp);
-  background-size: cover;
-  background-clip: text;
-  color: transparent;
-  animation: flow_flower_background 8s infinite alternate 0s ease;
-}
-
-.css_flower_font_15 {
-  background-color: #333;
-  background-image: url(//oyrc-pic.oss-cn-shenzhen.aliyuncs.com/fhw_invite/litter_flower.webp);
-  background-size: cover;
-  background-clip: text;
-  color: transparent;
-  animation: flow_flower_background 15s infinite alternate 0s ease;
-}
-
-@keyframes flow_flower_background {
-  0% {
-    background-position: -118px -86px;
+  .css_flower_font {
+    background-color   : #333;
+    background-image   : url(//oyrc-pic.oss-cn-shenzhen.aliyuncs.com/fhw_invite/litter_flower.webp);
+    background-size    : cover;
+    background-clip    : text;
+    color              : transparent;
+    background-position: -118px -80px;
   }
-  100% {
-    background-position: -160px -6px;
+
+  .css_flower_font_8 {
+    background-color: #333;
+    background-image: url(//oyrc-pic.oss-cn-shenzhen.aliyuncs.com/fhw_invite/litter_flower.webp);
+    background-size : cover;
+    background-clip : text;
+    color           : transparent;
+    animation       : flow_flower_background 8s infinite alternate 0s ease;
   }
-}
 
-/* 穿透字体 */
+  .css_flower_font_15 {
+    background-color: #333;
+    background-image: url(//oyrc-pic.oss-cn-shenzhen.aliyuncs.com/fhw_invite/litter_flower.webp);
+    background-size : cover;
+    background-clip : text;
+    color           : transparent;
+    animation       : flow_flower_background 15s infinite alternate 0s ease;
+  }
 
-/* 
+  @keyframes flow_flower_background {
+    0% {
+      background-position: -118px -86px;
+    }
+
+    100% {
+      background-position: -160px -6px;
+    }
+  }
+
+  /* 穿透字体 */
+
+  /* 
 https://cssfx.dev/
 一些cv即用的css特效。
 */
 
-.css_fx_pillars {
-  position: relative;
-}
-
-.css_fx_pillars::before, .css_fx_pillars::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background-color: #fc2f70;
-  transform: scaleY(0);
-  transition: transform 0.5s ease;
-}
-
-.css_fx_pillars::before {
-  left: -8px;
-  transform-origin: center top;
-}
-
-.css_fx_pillars:hover::before {
-  transform-origin: center bottom;
-  transform: scaleY(1);
-}
-
-.css_fx_pillars::after {
-  right: -8px;
-  transform-origin: center bottom;
-}
-
-.css_fx_pillars:hover::after {
-  transform-origin: center top;
-  transform: scaleY(1);
-}
-
-/* ----------------------------- */
-
-/* 毛玻璃的背景图设定 */
-
-.filter_bg_light_1 {
-  background-image: url(//oyrc-pic.oss-cn-shenzhen.aliyuncs.com/1469.webp);  
-}
-
-.filter_bg_light_2 {
-
-  background-image: url(//oyrc-pic.oss-cn-shenzhen.aliyuncs.com/1470.webp);
-
-}
-.filter_bg_dark_1 {
-  background-image: url(//oyrc-pic.oss-cn-shenzhen.aliyuncs.com/1471.webp);
-}
-
-.filter_light_style {
-  background-color: #fff !important;
-  color: #000;
-}
-
-.filter_dark_style {
-  background-color: #000 !important;
-  color: #fff
-}
-
-
-
-.filter_bg_box {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  z-index: -1;
-  content: '';
-  filter: blur(40px);
-  background-position-x: 50%;
-  background-position-y: center;
-  background-size: cover;
-  background-repeat-x: no-repeat;
-  background-repeat-y: no-repeat;
-  background-attachment: fixed;
-  background-origin: initial;
-  background-clip: initial;
-  background-color: rgb(255, 255, 255);
-  height: 100%;
-  width: 100%;
-}
-
-
-/* ----------------------------- */
-/* 全站 a 标签样式 */
-a {
-  text-decoration: none;
-  color: #6280ca
-}
-
-a:active,
-a:focus,
-a:hover,
-button,
-input,
-textarea {
-  outline: 0
-}
-
-a:hover {
-  // color: #008ae6;
-  color: #00d7c6;
-  text-decoration: underline;
-  -webkit-transition: all linear .2s;
-  transition: all linear .2s
-}
-
-/* ----------------------------- */
-
-/* markdown 图片限制大小 */
-.markdown-box {
-  transition: all 2s ease;
-  overflow: hidden;
-  width: 100%;
-  font-weight: 500;
-  img {
-    display: block;
-    width: auto !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    margin-top: 0 !important;
-    /* margin-bottom: 10px !important; */
-    margin-bottom: 10px;
+  .css_fx_pillars {
+    position: relative;
   }
-  
-  p{
-    padding: 10px 0;
-    margin-bottom: 15px;
-    img {
-      display: block !important;
-      width: auto !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-      margin-top: 0 !important;
-      /* margin-bottom: 10px !important; */
-      margin-bottom: 10px;
+
+  .css_fx_pillars::before,
+  .css_fx_pillars::after {
+    content         : '';
+    position        : absolute;
+    top             : 0;
+    bottom          : 0;
+    width           : 2px;
+    background-color: #fc2f70;
+    transform       : scaleY(0);
+    transition      : transform 0.5s ease;
+  }
+
+  .css_fx_pillars::before {
+    left            : -8px;
+    transform-origin: center top;
+  }
+
+  .css_fx_pillars:hover::before {
+    transform-origin: center bottom;
+    transform       : scaleY(1);
+  }
+
+  .css_fx_pillars::after {
+    right           : -8px;
+    transform-origin: center bottom;
+  }
+
+  .css_fx_pillars:hover::after {
+    transform-origin: center top;
+    transform       : scaleY(1);
+  }
+
+  /* ----------------------------- */
+
+  /* 毛玻璃的背景图设定 */
+
+  .filter_bg_light_1 {
+    background-image: url(//oyrc-pic.oss-cn-shenzhen.aliyuncs.com/1469.webp);
+  }
+
+  .filter_bg_light_2 {
+
+    background-image: url(//oyrc-pic.oss-cn-shenzhen.aliyuncs.com/1470.webp);
+
+  }
+
+  .filter_bg_dark_1 {
+    background-image: url(//oyrc-pic.oss-cn-shenzhen.aliyuncs.com/1471.webp);
+  }
+
+  .filter_light_style {
+    background-color: #fff !important;
+    color           : #000;
+  }
+
+  .filter_dark_style {
+    background-color: rgb(54, 54, 54) !important;
+    color           : #fff;
+
+    .title,
+    .mk-btn {
+      color: #fff
     }
-    > code {
-      color: #c7254e;
-      border-radius: 4px;
-      padding: 2px 4px;
-      background-color: #fff5ea;
-      border: none;
-      font-size: 13px;
-      white-space: pre-wrap;
-      vertical-align: middle;
-      margin: 0 3px;
+
+    .mk-btn {
+      border: 1px solid #fff;
     }
   }
+
+
+
+  .filter_bg_box {
+    position             : absolute;
+    top                  : 0px;
+    left                 : 0px;
+    right                : 0px;
+    bottom               : 0px;
+    z-index              : -1;
+    content              : '';
+    filter               : blur(40px);
+    background-position-x: 50%;
+    background-position-y: center;
+    background-size      : cover;
+    background-repeat-x  : no-repeat;
+    background-repeat-y  : no-repeat;
+    background-attachment: fixed;
+    background-origin    : initial;
+    background-clip      : initial;
+    background-color     : rgb(255, 255, 255);
+    height               : 100%;
+    width                : 100%;
+  }
+
+
+  /* ----------------------------- */
+  /* 全站 a 标签样式 */
   a {
-    color: #3194d0;
     text-decoration: none;
-    padding: 0 3px;
-    &:hover {
-      text-decoration: underline;
+    color          : #6280ca
+  }
+
+  a:active,
+  a:focus,
+  a:hover,
+  button,
+  input,
+  textarea {
+    outline: 0
+  }
+
+  a:hover {
+    // color          : #008ae6;
+    color             : #00d7c6;
+    text-decoration   : underline;
+    -webkit-transition: all linear .2s;
+    transition        : all linear .2s
+  }
+
+  /* ----------------------------- */
+
+  /* markdown 图片限制大小 */
+  .markdown-box {
+    transition : all 2s ease;
+    overflow   : hidden;
+    width      : 100%;
+    font-weight: 500;
+
+    img {
+      display         : block;
+      width           : auto !important;
+      margin-left     : auto !important;
+      margin-right    : auto !important;
+      margin-top      : 0 !important;
+      /* margin-bottom: 10px !important; */
+      margin-bottom   : 10px;
+    }
+
+    p {
+      padding      : 10px 0;
+      margin-bottom: 15px;
+
+      img {
+        display         : block !important;
+        width           : auto !important;
+        margin-left     : auto !important;
+        margin-right    : auto !important;
+        margin-top      : 0 !important;
+        /* margin-bottom: 10px !important; */
+        margin-bottom   : 10px;
+      }
+
+      >code {
+        color           : #c7254e;
+        border-radius   : 4px;
+        padding         : 2px 4px;
+        background-color: #fff5ea;
+        border          : none;
+        font-size       : 13px;
+        white-space     : pre-wrap;
+        vertical-align  : middle;
+        margin          : 0 3px;
+      }
+    }
+
+    a {
+      color          : #3194d0;
+      text-decoration: none;
+      padding        : 0 3px;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
-
-
-
