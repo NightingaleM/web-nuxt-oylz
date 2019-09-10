@@ -7,6 +7,11 @@ export default {
         tag, page, count
       }
     }
-
+  },
+  getArticle: ({ id }) => {
+    return {
+      url: `oy/papi/article/${id}`,
+      method: 'get',
+    }
   }
 }

@@ -3,7 +3,7 @@ export default function ({ $axios, redirect, app }) {
     return config
   })
 
-  $axios.onResponse(response => response)
+  $axios.onResponse(response => response.data)
 
   $axios.onError(error => {
     console.log(error)

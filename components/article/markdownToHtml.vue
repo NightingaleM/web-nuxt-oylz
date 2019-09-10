@@ -4,11 +4,13 @@
     :class="[isLight?'filter_light_style':'filter_dark_style',{'show-all':showAll}]"
   >
     <div class="title-box">
-      <h2 class="title css_flower_font_15">{{title}}</h2>
+      <nuxt-link :to="'/article/'+id">
+        <h2 class="title css_flower_font_15">{{title}}</h2>
+      </nuxt-link>
       <span class="user-name">- {{user.username}}</span>
       <span class="tag" v-for="(item,index) in tags" :key="index">{{item}}</span>
     </div>
-    <article :class="['markdown-box',{'show-all':showAll}]" v-html="mdText"></article>
+    <article :class="['markdown-box',{'show-all':showAll}]" v-html="md"></article>
     <div
       :class="['mk-btn','css_flower_font_8',showAll ? 'hide':'show']"
       @click="showAll = !showAll"
@@ -26,6 +28,9 @@ import 'highlightjs/styles/monokai-sublime.css' // sublime 风格 dark
 
 export default {
   props: {
+    id: {
+      type: Number
+    },
     user: {
       type: Object
     },
@@ -41,7 +46,6 @@ export default {
   },
   data() {
     return {
-      mdText: '',
       mdEl: null,
       showAll: false
     }
@@ -49,22 +53,7 @@ export default {
   computed: {
     ...mapState(['isLight']),
     ...mapGetters(['filterBg'])
-  },
-  methods: {
-    initHTMLText() {
-      let result = parsingMarkDown.render(this.md)
-      this.mdText = result
-    }
-  },
-  mounted() {
-    this.initHTMLText()
-  },
-  watch: {
-    md() {
-      this.initHTMLText()
-    }
-  },
-  created() {}
+  }
 }
 </script>
 <style lang="less">

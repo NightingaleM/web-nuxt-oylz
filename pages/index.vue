@@ -7,12 +7,14 @@
       :title="item.title"
       :tags="item.tags?item.tags.map(e=>e.tag):[]"
       :user="item.user"
+      :id="item.id"
     ></markdownToHtml>
   </div>
 </template>
 
 <script>
 import markdownToHtml from '~/components/article/markdownToHtml.vue'
+import { parsingMarkDown } from '~/plugins/public.js'
 import api from '~/api/index.js'
 import {
   scrollbarToWindowBottom,
@@ -26,14 +28,19 @@ export default {
   },
   async asyncData({ app, error, req, store, $axios }) {
     try {
-      let [articleLists] = await Promise.all([$axios(api.getArticleList())])
+      let [{ result: articleLists }] = await Promise.all([
+        $axios(api.getArticleList())
+      ])
       return {
         page: 1,
         count: 5,
-        total: articleLists.data.result.total,
-        perPage: articleLists.data.result.perPage,
-        lastPage: articleLists.data.result.lastPage,
-        articleLists: articleLists.data.result.data
+        total: articleLists.total,
+        perPage: articleLists.perPage,
+        lastPage: articleLists.lastPage,
+        articleLists: articleLists.data.map(e => {
+          e.content = parsingMarkDown.render(e.content)
+          return e
+        })
       }
     } catch (e) {
       console.log(e)

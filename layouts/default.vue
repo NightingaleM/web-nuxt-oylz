@@ -49,6 +49,7 @@ export default {
   border: 1px solid #e0e8d900;
   background-color: #e4f5e800;
   margin: 0 auto;
+  min-height: calc(100vh - 55px - 60px);
   /* padding: 20px; */
 }
 @media (max-width: 1000px) {
