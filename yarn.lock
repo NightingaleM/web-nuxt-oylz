@@ -962,6 +962,11 @@
     consola "^2.5.6"
     http-proxy-middleware "^0.19.1"
 
+"@nuxtjs/pwa-utils@3.0.0-beta.16":
+  version "3.0.0-beta.16"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/pwa-utils/-/pwa-utils-3.0.0-beta.16.tgz#808ddb090f3831c5b32931ab2d08231cc55abff9"
+  integrity sha512-3sF8iAstLi/dbQ39S4Zdy/QsK5IArgJ2s/nuGxOTVuxz01m07VdMbJejzsdYbyz31mQP0w4IPFNYOCPZhcvVig==
+
 "@nuxtjs/pwa@^3.0.0-beta.18":
   version "3.0.0-beta.18"
   resolved "https://registry.yarnpkg.com/@nuxtjs/pwa/-/pwa-3.0.0-beta.18.tgz#5205c21237d2cab5d2ac09301306a7b708376867"
@@ -982,6 +987,14 @@
     consola "^2.4.0"
     glob-all "^3.1.0"
     sass-resources-loader "^2.0.0"
+
+"@nuxtjs/workbox@^3.0.0-beta.16":
+  version "3.0.0-beta.16"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/workbox/-/workbox-3.0.0-beta.16.tgz#23353837bd438bde6bc41ccbfa8888be2035c69f"
+  integrity sha512-p0n+shhU+4z4uOwIjwS/8WsXJFxsGyCdD8UKOUvhQdgwi6PEHjpo++0ldr9u5xRb2xwhUPtfAzgmqZBHUj/uhg==
+  dependencies:
+    "@nuxtjs/pwa-utils" "3.0.0-beta.16"
+    workbox-cdn "^4.3.1"
 
 "@nuxtjs/youch@^4.2.3":
   version "4.2.3"

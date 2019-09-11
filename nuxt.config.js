@@ -93,4 +93,9 @@ module.exports = {
       ws: false
     },
   },
+  pwa: {
+    workbox: {
+
+    }
+  }
 }
