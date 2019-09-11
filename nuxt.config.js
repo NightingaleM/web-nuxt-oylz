@@ -8,7 +8,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    title: 'oylz',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1' },
@@ -16,9 +16,13 @@ module.exports = {
       {
         hid: 'keywords',
         name: 'keywords',
-        content: '欧阳,oylz,oyrc,前端,前端开发,odejs,博客,程序员'
+        content: '前端，前端开发，Web前端，web前端，web，欧阳，oylz，oyrc，前端，前端开发，nodejs，博客，程序员'
       },
-
+      {
+        hid: 'description',
+        name: 'description',
+        content: '欧阳lz的个人博客,前端开发的个人博客'
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/oylz.ico' }

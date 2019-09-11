@@ -8,6 +8,7 @@
       :tags="item.tags?item.tags.map(e=>e.tag):[]"
       :user="item.user"
       :id="item.id"
+      :isStick="item.is_stick"
     ></markdownToHtml>
   </div>
 </template>

@@ -5,16 +5,23 @@
   >
     <div class="title-box">
       <nuxt-link :to="'/article/'+id">
-        <h2 class="title css_flower_font_15">{{title}}</h2>
+        <h2 class="title css_flower_font_15">
+          <span class="stick" v-if="isStick">置顶</span>
+          {{title}}
+        </h2>
       </nuxt-link>
       <span class="user-name">- {{user.username}}</span>
       <span class="tag" v-for="(item,index) in tags" :key="index">{{item}}</span>
     </div>
     <article :class="['markdown-box',{'show-all':showAll}]" v-html="md"></article>
-    <div
+    <!-- <div
       :class="['mk-btn','css_flower_font_8',showAll ? 'hide':'show']"
       @click="showAll = !showAll"
-    >{{showAll?'CLOSE':'SHOW'}}</div>
+    >{{showAll?'CLOSE':'SHOW'}}</div>-->
+    <nuxt-link
+      :to="'/article/'+id"
+      :class="['mk-btn','css_flower_font_8',showAll ? 'hide':'show']"
+    >{{showAll?'CLOSE':'SHOW'}}</nuxt-link>
     <div :class="['filter_bg_box',filterBg]"></div>
   </div>
 </template>
@@ -42,6 +49,10 @@ export default {
     },
     tags: {
       type: Array
+    },
+    isStick: {
+      type: Number,
+      default: false
     }
   },
   data() {
@@ -72,6 +83,10 @@ export default {
     vertical-align: text-bottom;
     .title {
       display: inline-block;
+      .stick {
+        font-size: 12px;
+        border: 1px solid #ccc;
+      }
     }
     .user-name {
       font-size: 12px;

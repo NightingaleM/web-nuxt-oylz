@@ -239,6 +239,7 @@ https://cssfx.dev/
       margin-top      : 0 !important;
       /* margin-bottom: 10px !important; */
       margin-bottom   : 10px;
+      max-width       : cacl(100% - 10px);
     }
 
     p {
@@ -253,6 +254,7 @@ https://cssfx.dev/
         margin-top      : 0 !important;
         /* margin-bottom: 10px !important; */
         margin-bottom   : 10px;
+        max-width       : cacl(100% - 10px);
       }
 
       >code {
@@ -278,4 +280,8 @@ https://cssfx.dev/
       }
     }
   }
+}
+
+.markdown-box p img {
+  max-width: calc(100% - 10px);
 }
