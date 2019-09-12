@@ -61,14 +61,19 @@ export default {
       }, 200)
     },
     async getArticleList(page, count) {
-      let { data: articleRes } = await this.$axios(
+      let { result: articleLists } = await this.$axios(
         api.getArticleList({ page, count })
       )
 
-      this.total = articleRes.result.total
-      this.perPage = articleRes.result.perPage
-      this.lastPage = articleRes.result.lastPage
-      this.articleLists.push(...articleRes.result.data)
+      this.total = articleLists.total
+      this.perPage = articleLists.perPage
+      this.lastPage = articleLists.lastPage
+      this.articleLists.push(
+        ...articleLists.data.map(e => {
+          e.content = parsingMarkDown.render(e.content)
+          return e
+        })
+      )
     }
   },
   watch: {
