@@ -76,7 +76,7 @@ module.exports = {
     start_url: '/',
     display: 'fullscreen', // 定义开发人员对web应用程序的首选显示模式
     background_color: '#fff', // 
-    description: 'A simply readable Hacker News app.', // 描述
+    description: '欧阳润驰的个人网站', // 描述
     theme_color: '#3B8070',
     dir: 'auto',// 文本方向
     lang: 'zh', // 语言

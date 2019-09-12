@@ -55,8 +55,9 @@ export default {
     changePage() {
       return throttle(() => {
         if (scrollbarToWindowBottom() < 200) {
-          this.page =
-            this.page * this.count > this.total ? this.page : this.page + 1
+          if (parseInt(this.page, 10) < parseInt(this.lastPage, 10)) {
+            this.page = parseInt(this.page, 10) + 1
+          }
         }
       }, 200)
     },
