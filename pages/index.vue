@@ -21,8 +21,10 @@ import {
   scrollbarToWindowBottom,
   throttle,
   getCookie,
-  setCookie
+  setCookie,
+  setOssStyle
 } from '~/plugins/public.js'
+import { mapGetters } from 'vuex'
 export default {
   components: {
     markdownToHtml
@@ -39,7 +41,13 @@ export default {
         perPage: articleLists.perPage,
         lastPage: articleLists.lastPage,
         articleLists: articleLists.data.map(e => {
-          e.content = parsingMarkDown.render(e.content)
+          e.content = parsingMarkDown.render(
+            setOssStyle({
+              id: e.id,
+              ct: e.content,
+              type: store.getters.ossStyleName
+            })
+          )
           return e
         })
       }

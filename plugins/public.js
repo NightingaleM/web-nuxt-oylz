@@ -73,3 +73,16 @@ export const debounce = (fn, delay) => {
     }, delay);
   };
 };
+// 更换文章中图片oss规则
+// TODO: 目前的图片替换是写死了的，后面有更多规则时，该方法需要改进
+const OssStyleEnum = {
+  0: 'smallSize',
+  1: 'iOSPng',
+  smallSize: 'smallSize',
+  iOSPng: 'iOSPng'
+}
+export const setOssStyle = ({ id, ct, type } = { ct: '', type: 0 }) => {
+  let rct = ct.replace(/smallSize/g, 'iOSPng')
+  // let rct = ct.replace(/x-oss-process=style\/[a-zA-Z]+$/g, 'x-oss-process=style/iOSPng')
+  return rct
+}
