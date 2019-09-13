@@ -81,7 +81,7 @@ const OssStyleEnum = {
   smallSize: 'smallSize',
   iOSPng: 'iOSPng'
 }
-export const setOssStyle = ({ id, ct, type } = { ct: '', type: 0 }) => {
+export const setOssStyle = ({ ct, type } = { ct: '', type: 0 }) => {
   let rct = ct.replace(/smallSize/g, 'iOSPng')
   // let rct = ct.replace(/x-oss-process=style\/[a-zA-Z]+$/g, 'x-oss-process=style/iOSPng')
   return rct

@@ -1,5 +1,5 @@
 <template>
-  <div :class="['home-layout',filterBg]">
+  <div :class="['home-layout',filterBg,{'safari_easy_style':userAgent==='safari'}]">
     <headerNav />
     <section class="home-paper">
       <nuxt />
@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
 import headerNav from '~/components/public/head_nav'
 import footerNav from '~/components/public/footer'
 export default {
@@ -18,7 +18,8 @@ export default {
     footerNav
   },
   computed: {
-    ...mapGetters(['filterBg'])
+    ...mapState(['userAgent']),
+    ...mapGetters(['filterBg', ''])
   }
 }
 </script>

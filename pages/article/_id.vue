@@ -1,7 +1,7 @@
 <template>
   <section id="article-page" :class="[isLight?'filter_light_style':'filter_dark_style']">
     <h1 class="title">{{title}}</h1>
-    <p class="author">{{user.username}}</p>
+    <p class="author">{{user}}</p>
     <p class="tags" v-if="tags.length">
       <span>标签：</span>
       {{
@@ -18,7 +18,7 @@
 import { mapState, mapGetters } from 'vuex'
 import api from '~/api/index.js'
 import 'highlightjs/styles/monokai-sublime.css' // sublime 风格 dark
-import { parsingMarkDown } from '~/plugins/public.js'
+import { parsingMarkDown, setOssStyle } from '~/plugins/public.js'
 export default {
   async asyncData({ app, error, req, store, $axios, params }) {
     const { id } = params
@@ -32,11 +32,16 @@ export default {
         content: `[去首页吧！](https://oylz.site/)`
       })
     }
-    let md = parsingMarkDown.render(res[0].content)
+    let md = parsingMarkDown.render(
+      setOssStyle({
+        ct: res[0].content,
+        type: store.getters.ossStyleName
+      })
+    )
     return {
       content: md,
       title: res[0].title,
-      user: `-${res[0].user}`,
+      user: `-${res[0].user.username}`,
       tags: res[0].tags.map(e => e.tag),
       create_at: res[0].create_at
     }
@@ -70,7 +75,6 @@ export default {
   min-height: calc(100vh - 55px - 60px - 65px);
   margin-bottom: 30px;
   margin-top: 30px;
-  background-color: #fff;
   position: relative;
   padding: 20px;
   padding-bottom: 50px;

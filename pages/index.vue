@@ -43,7 +43,6 @@ export default {
         articleLists: articleLists.data.map(e => {
           e.content = parsingMarkDown.render(
             setOssStyle({
-              id: e.id,
               ct: e.content,
               type: store.getters.ossStyleName
             })

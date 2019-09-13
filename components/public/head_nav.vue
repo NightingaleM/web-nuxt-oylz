@@ -91,7 +91,7 @@ export default {
   align-items: flex-end;
   .oyrc-title {
     &:hover {
-      text-decoration: none;
+      text-decoration: none !important;
     }
     .title {
       color: #000;
