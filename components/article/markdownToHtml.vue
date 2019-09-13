@@ -18,14 +18,12 @@
       :class="['mk-btn','css_flower_font_8',showAll ? 'hide':'show']"
       @click="showAll = !showAll"
     >{{showAll?'CLOSE':'SHOW'}}</div>-->
-    <nuxt-link
-      :to="'/article/'+id"
-      :class="['mk-btn','css_flower_font_8',showAll ? 'hide':'show']"
-    >{{showAll?'CLOSE':'SHOW'}}</nuxt-link>
+    <ShowCloseBtn :id="id" type="article"></ShowCloseBtn>
     <div :class="['filter_bg_box',filterBg]"></div>
   </div>
 </template>
 <script>
+import ShowCloseBtn from '~/components/public/show_close_btn.vue'
 import { mapState, mapGetters } from 'vuex'
 import api from '~/api/index.js'
 import { parsingMarkDown } from '~/plugins/public.js'
@@ -34,6 +32,9 @@ import { parsingMarkDown } from '~/plugins/public.js'
 import 'highlightjs/styles/monokai-sublime.css' // sublime 风格 dark
 
 export default {
+  components: {
+    ShowCloseBtn
+  },
   props: {
     id: {
       type: Number
@@ -98,35 +99,6 @@ export default {
       // color: #000;
       cursor: pointer;
     }
-  }
-  .mk-btn {
-    cursor: pointer;
-    padding: 5px 10px;
-    display: block;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 1px solid rgba(0, 0, 0, 0.24);
-    font-size: 16px;
-    font-weight: bold;
-    opacity: 0.5;
-    transition: all 0.4s ease;
-    width: 73px;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-  .hide {
-    position: sticky;
-    bottom: 0;
-    width: 73px;
-    text-align: center;
-    left: 50%;
-    // transform: none;
-    background: #000;
-    color: #eee;
   }
   .markdown-box {
     max-height: calc(@hideHeight - 33px - 20px);

@@ -10,16 +10,21 @@
     </p>
     <div class="content markdown-box" v-html="content"></div>
     <div class="options"></div>
+    <ShowCloseBtn :isShow="btnStatus" type="/"></ShowCloseBtn>
     <div :class="['filter_bg_box',filterBg]"></div>
   </section>
 </template>
 
 <script>
+import ShowCloseBtn from '~/components/public/show_close_btn.vue'
 import { mapState, mapGetters } from 'vuex'
 import api from '~/api/index.js'
 import 'highlightjs/styles/monokai-sublime.css' // sublime 风格 dark
 import { parsingMarkDown, setOssStyle } from '~/plugins/public.js'
 export default {
+  components: {
+    ShowCloseBtn
+  },
   async asyncData({ app, error, req, store, $axios, params }) {
     const { id } = params
     let { result: res } = await $axios(api.getArticle({ id }))
@@ -43,7 +48,8 @@ export default {
       title: res[0].title,
       user: `-${res[0].user.username}`,
       tags: res[0].tags.map(e => e.tag),
-      create_at: res[0].create_at
+      create_at: res[0].create_at,
+      btnStatus: false
     }
   },
   head() {

@@ -200,21 +200,21 @@ https://cssfx.dev/
 
   /* ----------------------------- */
   /* 全站 a 标签样式 */
-  a {
+  a.normal_a {
     text-decoration: none;
     color          : #6280ca
   }
 
-  a:active,
-  a:focus,
-  a:hover,
+  a.normal_a:active,
+  a.normal_a:focus,
+  a.normal_a:hover,
   button,
   input,
   textarea {
     outline: 0
   }
 
-  a:hover {
+  a.normal_a:hover {
     // color          : #008ae6;
     color             : #00d7c6;
     text-decoration   : underline;
@@ -271,13 +271,25 @@ https://cssfx.dev/
     }
 
     a {
-      color          : #3194d0;
       text-decoration: none;
-      padding        : 0 3px;
+      color          : #6280ca
+    }
 
-      &:hover {
-        text-decoration: underline;
-      }
+    a:active,
+    a:focus,
+    a:hover,
+    button,
+    input,
+    textarea {
+      outline: 0
+    }
+
+    a:hover {
+      // color          : #008ae6;
+      color             : #00d7c6;
+      text-decoration   : underline;
+      -webkit-transition: all linear .2s;
+      transition        : all linear .2s
     }
   }
 }

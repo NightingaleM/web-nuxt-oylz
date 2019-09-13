@@ -6,7 +6,7 @@
     <p class="summary web-font">Que sera, sera</p>
     <div class="nav-lists">
       <nuxt-link
-        class="nav-link"
+        class="nav-link normal_a"
         v-for="(item,index) in navLists"
         :key="index"
         :to="item.link"
@@ -90,9 +90,7 @@ export default {
   display: flex;
   align-items: flex-end;
   .oyrc-title {
-    &:hover {
-      text-decoration: none !important;
-    }
+    text-decoration: none;
     .title {
       color: #000;
       background-position: -450px -200px;
