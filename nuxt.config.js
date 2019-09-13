@@ -81,7 +81,7 @@ module.exports = {
     theme_color: '#3B8070',
     dir: 'auto',// 文本方向
     lang: 'zh', // 语言
-    splash_pages: null
+    splash_pages: null,
 
   },
   /*
@@ -111,6 +111,7 @@ module.exports = {
   },
   pwa: {
     workbox: {
+      offlineStrategy: 'NetworkFirst'
     }
   }
 }
