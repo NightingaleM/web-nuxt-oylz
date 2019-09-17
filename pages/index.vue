@@ -55,6 +55,11 @@ export default {
       error({ message: e.message })
     }
   },
+  head() {
+    return {
+      title: 'oylz'
+    }
+  },
   data() {
     return {}
   },
