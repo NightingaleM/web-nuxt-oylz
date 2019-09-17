@@ -1,3 +1,5 @@
+
+
 export default function ({ $axios, redirect, app }) {
   $axios.onRequest(config => {
     return config
@@ -7,6 +9,7 @@ export default function ({ $axios, redirect, app }) {
 
   $axios.onError(error => {
     console.log(error)
-    return error
+    throw error
+    // return error
   })
 }

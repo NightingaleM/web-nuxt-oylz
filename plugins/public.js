@@ -1,5 +1,6 @@
 import MarkDownIt from 'markdown-it'
 import hljs from 'highlightjs'
+
 // 获取视窗距离页面最底部距离
 export const scrollbarToWindowBottom = () => {
   const windowHeight = document.documentElement.clientHeight
@@ -85,4 +86,9 @@ export const setOssStyle = ({ ct, type } = { ct: '', type: 0 }) => {
   let rct = ct.replace(/smallSize/g, 'iOSPng')
   // let rct = ct.replace(/x-oss-process=style\/[a-zA-Z]+$/g, 'x-oss-process=style/iOSPng')
   return rct
+}
+// 实现allSettled
+Promise.allSettled2 = (promiseLists) => {
+  const x = (promise) => (promise.then((value) => ({ status: 'ok', result: value }), (reason) => ({ status: 'not ok', result: reason })))
+  return Promise.all(promiseLists.map(e => x(e)))
 }

@@ -5,10 +5,11 @@
 emmmm,
     一点意料之外的错误，
   不要慌，
-    <nuxt-link to="/">回首页</nuxt-link>。
+    <a href="/">回首页</a>。
+      <p class="check">或者刷新几次…</p>
       </pre>
       <p class="check" @mouseenter="showError=true" @mouseout="showError=false">什么毛病?</p>
-      <p class="check-box" v-if="showError">{{error.status}}-{{error.message}}</p>
+      <p class="check-box" v-if="showError">{{error.status?error.status:''}}-{{error.message}}</p>
     </div>
   </div>
 </template>
@@ -69,5 +70,7 @@ a {
   margin-top: 20px;
   font-size: 14px;
   border: 1px dashed;
+  max-width: 80vw;
+  width: auto;
 }
 </style>

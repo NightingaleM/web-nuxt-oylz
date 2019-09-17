@@ -52,7 +52,7 @@ export default {
       }
     } catch (e) {
       console.log(e)
-      error({ status: 404, message: '获取文章的接口嗝屁了。' })
+      error({ message: e.message })
     }
   },
   data() {
