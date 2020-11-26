@@ -2858,9 +2858,11 @@
   </style>
   <style>
     .line-through {
-      text-decoration: line-through red;
+      text-decoration: line-through rgba(0,0,0,0.5);
     }
-
+    .low-weight {
+      opacity: 0.5;
+    }
     .sec-content .site {
       display: flex;
       align-items: center;
@@ -2904,7 +2906,7 @@
     </div>
     <div class="sec">
       <h3 class="sec-title">个人优势</h3>
-      <p class="sec-content">一年前端开发经验，参与过多个项目开发。前端页面，后台管理系统，后端接口，数据库操作等多方面都有实际参与和开发，不拘泥于前端页面。工作认真负责，富有责任心，可以和产品友好交流。</p>
+      <p class="sec-content">三年前端开发经验，参与过多个项目开发。前端页面，后台管理系统，后端接口，数据库操作，爬虫，反反爬虫等多方面都有实际参与和开发，不拘泥于前端页面。工作认真负责，富有责任心，可以和产品友好交流。</p>
     </div>
     <div class="sec social">
       <h3 class="sec-title">社交主页</h3>
@@ -2975,6 +2977,58 @@
     </div>
     <div class="sec">
       <h3 class="sec-title">项目经历</h3>
+      <div class="sec-content need-border">
+        <div class="from">个人网站</div>
+        <div class="major">
+          <span class="time">2019.02-至今</span>
+          全栈开发
+        </div>
+        <p>
+          <b>描述：</b>自己的个人网站,和配套的发布文章的后台,以及一个可登录和选择是否公开的EasyNote项目。
+          <br>纯粹兴趣推动的个人网站，目前只有一个展示文章的页面，别的内容还没想好做什么。<span
+          class="line-through low-weight">因为购买的是阿里最最最低配的服务器，所以第一次打开的时候会比较慢</span>，
+          <br>计划之后用上http2.0，希望会有所改善。
+          <br>主要技术：<br>
+          前端：
+          React,
+          Mobx,
+          Vue,
+          NUXT,
+          element-ui,
+          vuetifyjs,
+          vuelidate,
+          less,
+          TypeScript
+          <br>
+          后端：
+          node,
+          adonisjs,
+          mysql
+        </p>
+        <p><b>项目链接：</b>
+          <a target="_blank" href="https://www.oylz.site">https://www.oylz.site</a> \
+          <a target="_blank" href="https://easynote.oylz.site">https://easynote.oylz.site</a>
+        </p>
+      </div>
+      <div class="sec-content need-border">
+        <div class="from">OY_UI库</div>
+        <div class="major">
+          <span class="time">2020.09-至今</span>
+          前端开发
+        </div>
+        <p>
+          <b>描述：</b>一款基于Vue3和TypeScript开发的UI组件库。
+          <br>在兴趣推动下，在Vue3普及开之前先去了解了"玩耍"了一下。目前只有Dialog\Button\Switch\Tabs四个组件，之后会陆续补充更多组件。
+          <br>主要技术：<br>
+          Vue3,
+          vite,
+          scss,
+          TypeScript
+        </p>
+        <p><b>项目链接：</b>
+          <a target="_blank" href="https://oy-ui.oylz.site/#/">https://oy-ui.oylz.site/#/</a>
+        </p>
+      </div>
       <div class="sec-content need-border">
         <div class="from">商务CRM系统</div>
         <div class="major">
@@ -3073,40 +3127,6 @@
           <br>主要技术：<br><span class="imp">Nodejs</span>
         </p>
         <!--      <p><b>项目链接：</b><a target="_blank" href="https://m.tgw360.com/contest/#/homepage">华讯股神大赛</a></p>-->
-      </div>
-      <div class="sec-content need-border">
-        <div class="from">个人网站</div>
-        <div class="major">
-          <span class="time">2019.02-至今</span>
-          全栈开发
-        </div>
-        <p>
-          <b>描述：</b>自己的个人网站。
-          <br>纯粹兴趣推动的个人网站，网页的前端部分是刚开始做不久，所以目前只有一个展示文章的页面，别的内容还没想好做什么。之前还写过一个easy note，包含了登陆系统，
-          <br>功能就是名字所说的，可以选择公开或不公开。网站和easy note用的是同一个后台，以及后台管理系统。<span
-            class="line-through">因为购买的是阿里最最最低配的服务器，所以第一次打开的时候会比较慢</span>，
-          <br><span class="line-through">动画看着很难受，可以加载完后刷新一次看下动画…</span>，计划之后用上http2.0，希望会有所改善。
-          <br>主要技术：<br>
-          前端：
-          React,
-          Mobx,
-          Vue,
-          NUXT,
-          element-ui,
-          vuetifyjs,
-          vuelidate,
-          less,
-          TypeScript
-          <br>
-          后端：
-          node,
-          adonis,
-          mysql
-        </p>
-        <p><b>项目链接：</b>
-          <a target="_blank" href="https://www.oylz.site">https://www.oylz.site</a> \
-          <a target="_blank" href="https://easynote.oylz.site">https://easynote.oylz.site</a>
-        </p>
       </div>
     </div>
     <div class="sec">
