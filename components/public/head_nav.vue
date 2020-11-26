@@ -10,10 +10,12 @@
         v-for="(item,index) in navLists"
         :key="index"
         :to="item.link"
-      >{{item.name}}</nuxt-link>
+      >{{ item.name }}
+      </nuxt-link>
     </div>
     <div class="flex-hold-grow"></div>
-    <!-- <div class="go-loading" @click="removeCookie">还想看</div> -->
+    <!--     <div class="go-loading" @click="removeCookie">还想看</div> -->
+    <nuxt-link  to="/welcome" class="normal_a go-loading">花里胡哨的欢迎页面</nuxt-link>
     <div :class="['filter_bg_box',filterBg]"></div>
   </header>
 </template>
@@ -31,7 +33,11 @@ export default {
         {
           name: '首页',
           link: '/'
-        }
+        },
+        // {
+        //   name: '来～啊～ 快活啊～ 反正有～ 大把时光～～',
+        //   link: '/chats'
+        // }
         // {
         //   name: '搜索',
         //   link: '/home'
@@ -63,7 +69,6 @@ export default {
   },
   mounted() {
     eventHub.on('resize', data => {
-      console.log(data)
       this.resize = data
     })
     eventHub.emit('resize', window.innerWidth)
@@ -89,8 +94,10 @@ export default {
   padding: 0 30px;
   display: flex;
   align-items: flex-end;
+
   .oyrc-title {
     text-decoration: none;
+
     .title {
       color: #000;
       background-position: -450px -200px;
@@ -98,30 +105,48 @@ export default {
       font-size: 38px;
     }
   }
+
   .summary {
     padding-left: 10px;
     line-height: 30px;
   }
+
   .nav-lists {
     margin-left: 50px;
     line-height: 30px;
+
     .nav-link {
+      margin-right: 15px;
       color: #000;
+
       &:hover {
         color: #000;
       }
     }
   }
+
+  .go-loading {
+    text-decoration: none;
+    font-size: 12px;
+    @media (max-width: 850px) {
+      display: none;
+    }
+  }
+
 }
+
+
 .filter_dark_style {
   .oyrc-title {
     .title {
       color: rgb(231, 231, 231);
     }
   }
+
   .nav-lists {
     .nav-link {
       color: #fff;
+
       &:hover {
         color: #fff;
       }

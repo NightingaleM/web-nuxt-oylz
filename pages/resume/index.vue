@@ -145,6 +145,9 @@ export default {
         }
       }
     }
+  },
+  mounted() {
+    window.location.href = '/resume.html'
   }
 }
 </script>

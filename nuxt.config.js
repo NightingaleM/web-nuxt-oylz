@@ -49,6 +49,7 @@ module.exports = {
   */
   plugins: [
     '~plugins/axios.js',
+
   ],
 
   /*
@@ -101,12 +102,12 @@ module.exports = {
     '/oy/api': {
       target: 'http://127.0.0.1:2222',
       changeOrigin: true,
-      ws: false
+      ws: true
     },
     '/oy/papi': {
       target: 'http://127.0.0.1:2222',
       changeOrigin: true,
-      ws: false
+      ws: true
     },
   },
   pwa: {
